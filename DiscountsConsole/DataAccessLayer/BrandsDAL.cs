@@ -2,7 +2,7 @@
 using DiscountsConsole.Models;
 using System.Collections.Generic;
 
-namespace DiscountsConsole.DAL
+namespace DiscountsConsole.DataAccessLayer
 {
     public class BrandsDAL : AbstractDAL<Brand>
     {

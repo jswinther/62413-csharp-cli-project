@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DiscountsConsole.DAL
+namespace DiscountsConsole.DataAccessLayer
 {
-    public class ProductsDAL : AbstractDAL<Product>
+    public class SellerDAL : AbstractDAL<Seller>
     {
-        public ProductsDAL(List<Product> list) : base(list)
+        public SellerDAL(List<Seller> list) : base(list)
         {
         }
     }

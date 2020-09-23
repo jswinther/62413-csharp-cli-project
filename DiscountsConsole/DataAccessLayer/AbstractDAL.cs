@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DiscountsConsole.DAL
+namespace DiscountsConsole.DataAccessLayer
 {
-    public abstract class AbstractDAL<T> : IDAL<T> where T : IName
+    public abstract class AbstractDAL<T> : IDataAccessLayer<T> where T : IName
     {
         private List<T> List;
 
@@ -21,6 +21,7 @@ namespace DiscountsConsole.DAL
 
         public void Delete(T entity)
         {
+
             List.Remove(entity);
         }
 
