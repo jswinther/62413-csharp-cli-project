@@ -9,9 +9,8 @@ namespace DiscountsConsole
             string[] args = Console.ReadLine().Split(' ');
             foreach (var arg in args)
             {
-                Console.WriteLine("Hello World!");
+                Console.WriteLine(arg);
             }
-            
         }
     }
 }
