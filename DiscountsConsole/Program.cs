@@ -11,26 +11,39 @@ namespace DiscountsConsole
     {
         static void Main()
         {
-            IDatabase db = new InMemoryDatabase();
-            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(db);
-            BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(db);
-            SellersBusinessLogic sellersBll = new SellersBusinessLogic(db);
-            var input = Console.ReadLine().Split(' ');
-            Array.Reverse(input);
-            Stack<string> args = new Stack<string>(input);
-            switch (args.Pop())
+            while (true)
             {
-                case "-products":
-                    productsBll.Run(args);
-                    break;
-                case "-brands":
-                    brandsBll.Run(args);
-                    break;
-                case "-sellers":
-                    sellersBll.Run(args);
-                    break;
-                default:
-                    break;
+                IDatabase db = new InMemoryDatabase();
+                ProductsBusinessLogic productsBll = new ProductsBusinessLogic(db);
+                BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(db);
+                SellersBusinessLogic sellersBll = new SellersBusinessLogic(db);
+                string options = $"Options:" +
+                    $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name]]" +
+                    $"\n\t-Brands" +
+                    $"\n\t-Sellers" +
+                    $"\n\t-Help" +
+                    $"\n\t Press Ctrl+C to exit";
+                Console.WriteLine(options);
+                var input = Console.ReadLine().Split(' ');
+                Array.Reverse(input);
+                Stack<string> args = new Stack<string>(input);
+                switch (args.Pop().ToUpper())
+                {
+                    case "-PRODUCTS":
+                        productsBll.Run(args);
+                        break;
+                    case "-BRANDS":
+                        brandsBll.Run(args);
+                        break;
+                    case "-SELLERS":
+                        sellersBll.Run(args);
+                        break;
+                    case "-HELP":
+                        Console.WriteLine(options);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
