@@ -8,7 +8,6 @@ namespace DiscountsConsole.BusinessLogicLayer
 {
     public static class ListExtensions
     {
-        public delegate List<T> PerformCalc<T>(List<T> ts);
         public static List<T> SortByName<T>(this List<T> ts) where T : IName
         {
             ts.Sort(CompareByName);
