@@ -1,4 +1,6 @@
-﻿namespace DiscountsConsole.Models
+﻿using System;
+
+namespace DiscountsConsole.Models
 {
     public interface IName
     {

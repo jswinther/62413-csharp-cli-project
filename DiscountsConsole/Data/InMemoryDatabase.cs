@@ -5,9 +5,9 @@ using System.Text;
 
 namespace DiscountsConsole.Data
 {
-    public class Database
+    public class InMemoryDatabase : IDatabase
     {
-        public Database()
+        public InMemoryDatabase()
         {
             Products.Add(new Product("Sødmælk", 7, "Arla", "Netto"));
             Products.Add(new Product("Minimælk", 7, "Arla", "Netto"));
@@ -18,6 +18,7 @@ namespace DiscountsConsole.Data
         }
 
         public List<Product> Products { get; set; } = new List<Product>();
-
+        public List<Brand> Brands { get; set; } = new List<Brand>();
+        public List<Seller> Sellers { get; set; } = new List<Seller>();
     }
 }

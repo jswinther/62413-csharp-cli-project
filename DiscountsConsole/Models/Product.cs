@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DiscountsConsole.Models
 {
-    public class Product : IDisplayable, IName
+    public class Product : IDisplayable, IName, IPrice
     {
         public Product(string name, double price, string brand, string seller)
         {
