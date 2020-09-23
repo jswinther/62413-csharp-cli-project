@@ -4,9 +4,14 @@ namespace DiscountsConsole
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            string[] args = Console.ReadLine().Split(' ');
+            foreach (var arg in args)
+            {
+                Console.WriteLine("Hello World!");
+            }
+            
         }
     }
 }
