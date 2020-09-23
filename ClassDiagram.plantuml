@@ -1,0 +1,53 @@
+@startuml Class Diagram
+
+class Database {
+    OfferPapers: List<OfferPaper>
+    Items: List<Item>
+}
+
+
+
+class OfferPaper {
+    Chain: string
+    Items: List<Item>
+}
+
+class Item {
+    Price: double
+    Name: string
+    Brand: string
+    Seller: string
+}
+
+class OfferPaperDAL {
+    Database: Datebase
+}
+
+class ItemDAL {
+    Database: Datebase
+}
+
+
+
+OfferPaper "1" *-- "many" Item : contains
+
+@enduml
+
+Netto Avis
+    havegryn solgryn 10kr netto
+    havregyn 18kr
+
+FAkta avis
+    havregryn 11kr
+    havregryn 22kr
+
+
+class Itemtoshow {
+    Price: double
+    Name: string
+    Brand: string
+    forretning
+}
+
+
+netto solgryn havregryn

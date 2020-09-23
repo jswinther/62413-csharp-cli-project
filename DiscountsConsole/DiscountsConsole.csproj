@@ -8,7 +8,8 @@
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="DAL\" />
-    <Folder Include="Database\" />
+    <Folder Include="DAL\" />
+    <Folder Include="UIL\" />
     <Folder Include="UIL\" />
   </ItemGroup>
 

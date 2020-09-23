@@ -1,5 +1,6 @@
 ﻿using System;
-
+using DiscountsConsole.Data;
+using System.Linq;
 namespace DiscountsConsole
 {
     class Program
@@ -11,6 +12,13 @@ namespace DiscountsConsole
             {
                 Console.WriteLine(arg);
             }
+
+
+
+            Database db = new Database();
+            
+            Console.WriteLine(string.Join(' ', db.Products.Select(product => product.Seller).ToHashSet()));
+
         }
     }
 }
