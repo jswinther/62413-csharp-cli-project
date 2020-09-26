@@ -29,8 +29,8 @@ namespace DiscountsConsole.BusinessLogicLayer
                 switch (flag)
                 {
                     case "-SORT":
-                        if (arg.Equals("NAME")) products = products.SortByName();
-                        else if(arg.Equals("PRICE")) products = products.SortByPrice();
+                        if (arg.Equals("NAME")) products = products.SortByNameAscending();
+                        else if(arg.Equals("PRICE")) products = products.SortByPriceAscending();
                         else throw new Exception("Invalid sorting parameter");
                         break;
                     case "-NAMESEARCH":

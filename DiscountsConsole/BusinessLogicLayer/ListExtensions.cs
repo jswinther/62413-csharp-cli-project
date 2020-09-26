@@ -8,15 +8,28 @@ namespace DiscountsConsole.BusinessLogicLayer
 {
     public static class ListExtensions
     {
-        public static List<T> SortByName<T>(this List<T> ts) where T : IName
+        public static List<T> SortByNameAscending<T>(this List<T> ts) where T : IName
         {
-            ts.Sort(CompareByName);
+            ts.Sort(CompareByNameAscending);
             return ts;
         }
 
-        public static List<T> SortByPrice<T>(this List<T> ts) where T : IPrice
+        public static List<T> SortByPriceAscending<T>(this List<T> ts) where T : IPrice
         {
-            ts.Sort(CompareByPrice);
+            ts.Sort(CompareByPriceAscending);
+            return ts;
+        }
+
+
+        public static List<T> SortByNameDescending<T>(this List<T> ts) where T : IName
+        {
+            ts.Sort(CompareByNameDescending);
+            return ts;
+        }
+
+        public static List<T> SortByPriceDescending<T>(this List<T> ts) where T : IPrice
+        {
+            ts.Sort(CompareByPriceDescending);
             return ts;
         }
 
@@ -40,14 +53,24 @@ namespace DiscountsConsole.BusinessLogicLayer
             return ts.Where(s => s.Price > minPrice).ToList();
         }
 
-        private static int CompareByName<T>(T x, T y) where T : IName
+        private static int CompareByNameAscending<T>(T x, T y) where T : IName
         {
             return x.Name.CompareTo(y.Name);
         }
 
-        private static int CompareByPrice<T>(T x, T y) where T : IPrice
+        private static int CompareByPriceAscending<T>(T x, T y) where T : IPrice
         {
             return x.Price.CompareTo(y.Price);
+        }
+
+        private static int CompareByNameDescending<T>(T x, T y) where T : IName
+        {
+            return -x.Name.CompareTo(y.Name);
+        }
+
+        private static int CompareByPriceDescending<T>(T x, T y) where T : IPrice
+        {
+            return -x.Price.CompareTo(y.Price);
         }
 
         public static string Print<T>(this List<T> ts) where T : IDisplayable
