@@ -49,7 +49,6 @@ namespace DiscountsConsole.Data
             Products.Add(new Product("Stolehynder", 99, "Quality textiles", "Aldi"));
             Products.Add(new Product("kroge i træ", 49, "FSC", "Aldi"));
 
-
             Products.Add(new Product("Cheddar", 9, "Coop", "Fakta"));
             Products.Add(new Product("Brød", 12, "Schulstad", "Fakta"));
             Products.Add(new Product("Flødeboller", 19, "Spangsberg", "Fakta"));
