@@ -10,13 +10,7 @@ namespace DiscountsConsole.Data
     {
         public InMemoryDatabase()
         {
-            Products.Add(new Product("Sødmælk", 7, "Arla", "Netto"));
-            Products.Add(new Product("Minimælk", 7, "Arla", "Netto"));
-            Products.Add(new Product("Letmælk", 7, "Arla", "Netto"));
-            Products.Add(new Product("Sødmælk", 8, "Thise", "Fakta"));
-            Products.Add(new Product("Sødmælk", 9, "Arla", "Meny"));
-            Products.Add(new Product("Sødmælk", 10, "Arla", "Aldi"));
-
+            // Aldi tilbudsavis
             Products.Add(new Product("Solgryn", 28, "Ota", "Aldi"));
             Products.Add(new Product("XXL Schnitzel", 24, "Worlds kitchen", "Aldi"));
             Products.Add(new Product("Skæreost", 45, "Them", "Aldi"));
@@ -49,6 +43,7 @@ namespace DiscountsConsole.Data
             Products.Add(new Product("Stolehynder", 99, "Quality textiles", "Aldi"));
             Products.Add(new Product("kroge i træ", 49, "FSC", "Aldi"));
 
+            // Fakta tilbudsavis
             Products.Add(new Product("Cheddar", 9, "Coop", "Fakta"));
             Products.Add(new Product("Brød", 12, "Schulstad", "Fakta"));
             Products.Add(new Product("Flødeboller", 19, "Spangsberg", "Fakta"));
@@ -72,6 +67,41 @@ namespace DiscountsConsole.Data
             Products.Add(new Product("Chokoladerulle", 10, "marabou", "Fakta"));
             Products.Add(new Product("Klinkerens", 15, "ajax", "Fakta"));
             Products.Add(new Product("Tandbørste", 20, "colgate", "Fakta"));
+
+            // Netto tilbudsavis
+            Products.Add(new Product("Bleer", 89, "Libero Touch", "Netto"));
+            Products.Add(new Product("Coca Cola", 11, "Coca Cola", "Netto"));
+            Products.Add(new Product("Hakket oksekød 14-18%", 15, "Velsmag", "Netto"));
+            Products.Add(new Product("Cremefine", 5, "Cremefine", "Netto"));
+            Products.Add(new Product("Tomatsauce", 9, "Dolmio", "Netto"));
+            Products.Add(new Product("Toiletpapir", 10, "Godt papir", "Netto"));
+            Products.Add(new Product("Hjemmesko", 20, "Spot-vare", "Netto"));
+            Products.Add(new Product("Plastboks med låg", 35, "Spot-vare", "Netto"));
+            Products.Add(new Product("Veggie Pålæg 70g", 8, "Den grønne slagter", "Netto"));
+            Products.Add(new Product("Rullepølse 70g", 8, "Den grønne slagter", "Netto"));
+            Products.Add(new Product("Kyllingebryst 70g", 8, "Den grønne slagter", "Netto"));
+            Products.Add(new Product("Hel Kylling 1500g", 79, "Legismose", "Netto"));
+            Products.Add(new Product("Hel Kylling 1350g", 29, "Velsmag", "Netto"));
+            Products.Add(new Product("Torskefars", 15, "Havfisk", "Netto"));
+            Products.Add(new Product("Laksefars", 15, "Havfisk", "Netto"));
+            Products.Add(new Product("Asparges Suppe", 18, "Knorr", "Netto"));
+            Products.Add(new Product("Karry Suppe", 18, "Knorr", "Netto"));
+            Products.Add(new Product("Goulash Suppe", 18, "Knorr", "Netto"));
+            Products.Add(new Product("Tomat Suppe", 18, "Knorr", "Netto"));
+            Products.Add(new Product("Mozzarella", 10, "Galbani", "Netto"));
+            Products.Add(new Product("Prosciutto Pizza", 20, "Premieur", "Netto"));
+            Products.Add(new Product("Meat Speciale Pizza", 20, "Premieur", "Netto"));
+            Products.Add(new Product("Mozzarella Pizza", 20, "Premieur", "Netto"));
+            Products.Add(new Product("Multi Juice", 10, "Nikoline", "Netto"));
+            Products.Add(new Product("Mountain Blast", 10, "Powerrade", "Netto"));
+            Products.Add(new Product("Blue Keld B Free", 10, "Blue Keld", "Netto"));
+            Products.Add(new Product("Vanilje Yoghurt", 9, "Cheasy", "Netto"));
+            Products.Add(new Product("Skovbær Yoghurt", 9, "Cheasy", "Netto"));
+            Products.Add(new Product("Jordbær & Rabarber Yoghurt", 9, "Cheasy", "Netto"));
+            Products.Add(new Product("Natural Skyr", 19, "Legismose", "Netto"));
+            Products.Add(new Product("Vanilje Skyr", 19, "Legismose", "Netto"));
+            Products.Add(new Product("Pære & Banan Skyr", 19, "Legismose", "Netto"));
+
 
             foreach (var brand in Products.Select(product => product.Brand).Distinct())
             {
