@@ -19,34 +19,54 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public void Run(Stack<string> args)
         {
-            Console.WriteLine(args.Count);
-            Console.WriteLine(string.Join(' ', args));
             List<Product> products = DAL.Get();
             while (args.Count > 0)
             {
                 var flag = args.Pop().ToUpper();
-                var arg = args.Pop().ToUpper();
+                
                 switch (flag)
                 {
                     case "-SORT":
-                        if (arg.Equals("NAME")) products = products.SortByNameAscending();
-                        else if(arg.Equals("PRICE")) products = products.SortByPriceAscending();
-                        else throw new Exception("Invalid sorting parameter");
+                        products = Sort(products, args);
+                        Console.WriteLine(products.Print());
                         break;
                     case "-NAMESEARCH":
-                        products = products.SearchByName(arg);
+                        products = Search(products, args);
+                        Console.WriteLine(products.Print());
                         break;
                     case "-PRICERANGE":
-                        var maxprice = int.Parse(args.Pop());
-                        products = products.PriceRange(int.Parse(arg), maxprice);
+                        products = PriceRange(products, args);
+                        Console.WriteLine(products.Print());
                         break;
                     default:
                         break;
                 }
             }
+        }
 
-            Console.WriteLine(products.Print()); 
-            //Console.WriteLine(DAL.Get().PriceRange(5, 10).SearchByName("Sød").SortByPrice().Print());
+        private static List<Product> PriceRange(List<Product> products, Stack<string> args)
+        {
+            var arg = args.Pop().ToUpper();
+            var maxprice = int.Parse(args.Pop());
+            products = products.PriceRange(int.Parse(arg), maxprice);
+
+            return products;
+        }
+
+        private static List<Product> Search(List<Product> products, Stack<string> args)
+        {
+            var arg = args.Pop().ToUpper();
+            products = products.SearchByName(arg);
+            return products;
+        }
+
+        private static List<Product> Sort(List<Product> products, Stack<string> args)
+        {
+            var arg = args.Pop().ToUpper();
+            if (arg.Equals("NAME")) products = products.SortByNameAscending();
+            else if (arg.Equals("PRICE")) products = products.SortByPriceAscending();
+            else throw new Exception("Invalid sorting parameter");
+            return products;
         }
     }
 }

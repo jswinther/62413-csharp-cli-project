@@ -35,7 +35,7 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public static List<T> SearchByName<T>(this List<T> ts, string search) where T : IName
         {
-            return ts.Where(s => s.Name.Contains(search)).ToList();
+            return ts.Where(s => s.Name.ToUpper().Contains(search)).ToList();
         }
 
         public static List<T> PriceRange<T>(this List<T> ts, double minPrice, double maxPrice) where T : IPrice
