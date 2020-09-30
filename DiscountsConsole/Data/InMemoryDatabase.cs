@@ -30,7 +30,7 @@ namespace DiscountsConsole.Data
             Products.Add(new Product("Solsikkerugbrød", 12, "Kohberg", "Aldi"));
             Products.Add(new Product("Shampoo", 20, "head and shoulders", "Aldi"));
             Products.Add(new Product("Morgenmad", 35, "nestle", "Aldi"));
-            Products.Add(new Product("Yogurt", 14, "yoggi", "Aldi"));
+            Products.Add(new Product("Yoghurt", 14, "yoggi", "Aldi"));
             Products.Add(new Product("Smoothie", 10, "Froosh", "Aldi"));
             Products.Add(new Product("kartoffelsuppe", 12, "La finesse", "Aldi"));
             Products.Add(new Product("Ellebryg", 10, "Skovlyst", "Aldi"));
