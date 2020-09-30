@@ -49,6 +49,11 @@ namespace DiscountsConsole.BusinessLogicLayer
             Console.WriteLine(products.Print());
         }
 
+        internal List<Product> Get()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Product> PriceLessThan(List<Product> entities, Stack<string> args)
         {
             var arg = args.Pop();
@@ -80,9 +85,33 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public List<Product> Sort(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop().ToUpper();
-            if (arg.Equals("NAME")) entities = entities.SortByNameAscending();
-            else if (arg.Equals("PRICE")) entities = entities.SortByPriceAscending();
+            var arg1 = args.Pop().ToUpper();
+            var arg2 = args.Pop().ToUpper();
+            if (arg1.Equals("NAME"))
+            {
+                if (arg2.Equals("ASC"))
+                {
+                    entities = entities.SortByNameAscending();
+                }
+                else if (arg2.Equals("DESC"))
+                {
+                    entities = entities.SortByNameDescending();
+                }
+
+                
+            }
+            else if (arg1.Equals("PRICE"))
+            {
+                if (arg2.Equals("ASC"))
+                {
+                    entities = entities.SortByPriceAscending();
+                }
+                else if (arg2.Equals("DESC"))
+                {
+                    entities = entities.SortByPriceDescending();
+                }
+                
+            }
             else throw new Exception("Invalid sorting parameter");
             return entities;
         }

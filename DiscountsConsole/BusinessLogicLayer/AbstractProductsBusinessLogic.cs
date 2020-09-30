@@ -87,8 +87,34 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public List<T> Sort(List<T> entities, Stack<string> args)
         {
-            var arg = args.Pop().ToUpper();
-            if (arg.Equals("NAME")) entities = entities.SortByNameAscending();
+            var arg1 = args.Pop().ToUpper();
+            var arg2 = args.Pop().ToUpper();
+            if (arg1.Equals("NAME"))
+            {
+                if (arg2.Equals("ASC"))
+                {
+                    entities = entities.SortByNameAscending();
+                }
+                else if (args.Equals("DESC"))
+                {
+                    entities = entities.SortByNameDescending();
+                }
+                
+            }
+            else if (arg1.Equals("PRICE"))
+            {
+                foreach (var entity in entities)
+                {
+                    if (arg2.Equals("ASC"))
+                    {
+                        entity.Products = entity.Products.SortByNameAscending();
+                    }
+                    else if (arg2.Equals("DESC"))
+                    {
+                        entity.Products = entity.Products.SortByNameDescending();
+                    }
+                }
+            }
             else throw new Exception("Invalid sorting parameter");
             return entities;
         }
