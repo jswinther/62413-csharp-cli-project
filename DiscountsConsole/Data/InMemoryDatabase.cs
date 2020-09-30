@@ -1,4 +1,5 @@
 ﻿using DiscountsConsole.Models;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,14 @@ namespace DiscountsConsole.Data
 {
     public class InMemoryDatabase : IDatabase
     {
+        private readonly IContext _context;
+        public IMongoCollection<Product> collection { get; set; }
+        public InMemoryDatabase(IContext context)
+        {
+            _context = context;
+            collection = _context.GetCollection<Product>(typeof(Product).Name);
+        }
+
         public InMemoryDatabase()
         {
             // Aldi tilbudsavis

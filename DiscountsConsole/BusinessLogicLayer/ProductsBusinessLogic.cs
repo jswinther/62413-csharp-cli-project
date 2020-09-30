@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ConsoleTables;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
@@ -45,13 +46,13 @@ namespace DiscountsConsole.BusinessLogicLayer
                         break;
                 }
             }
-            
-            Console.WriteLine(products.Print());
-        }
 
-        internal List<Product> Get()
-        {
-            throw new NotImplementedException();
+            var table = new ConsoleTable("Name", "Price", "Brand", "Seller");
+            foreach (var item in products)
+            {
+                table.AddRow(item.Name, item.Price + ",-", item.Brand, item.Seller);
+            }
+            table.Write(Format.Alternative);
         }
 
         public List<Product> PriceLessThan(List<Product> entities, Stack<string> args)

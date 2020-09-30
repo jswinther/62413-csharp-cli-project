@@ -72,15 +72,5 @@ namespace DiscountsConsole.BusinessLogicLayer
         {
             return -x.Price.CompareTo(y.Price);
         }
-
-        public static string Print<T>(this List<T> ts) where T : IDisplayable
-        {
-            List<string> vs = new List<string>();
-            foreach (var item in ts)
-            {
-                vs.Add(item.Display());
-            }
-            return string.Join('\n', vs);
-        }
     }
 }

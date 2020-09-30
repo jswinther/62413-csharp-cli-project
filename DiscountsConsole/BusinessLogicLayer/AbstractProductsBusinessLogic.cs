@@ -1,4 +1,5 @@
-﻿using DiscountsConsole.DataAccessLayer;
+﻿using ConsoleTables;
+using DiscountsConsole.DataAccessLayer;
 using DiscountsConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
-    public abstract class AbstractProductsBusinessLogic<T> : IBusinessLogic<T> where T : IProducts<Product>, IName, IDisplayable
+    public abstract class AbstractProductsBusinessLogic<T> : IBusinessLogic<T> where T : IProducts<Product>, IName
     {
         protected AbstractDAL<T> DAL;
 
@@ -75,7 +76,17 @@ namespace DiscountsConsole.BusinessLogicLayer
                         break;
                 }
             }
-            Console.WriteLine(brands.Print());
+
+            foreach (var item1 in brands)
+            {
+                Console.WriteLine(item1.Name);
+                var table = new ConsoleTable("Name", "Price", "Brand", "Seller");
+                foreach (var item in item1.Products)
+                {
+                    table.AddRow(item.Name, item.Price + ",-", item.Brand, item.Seller);
+                }
+                table.Write(Format.Alternative);
+            }
         }
 
         public List<T> Search(List<T> entities, Stack<string> args)

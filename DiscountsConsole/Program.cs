@@ -5,13 +5,26 @@ using DiscountsConsole.BusinessLogicLayer;
 using System.Collections.Generic;
 using DiscountsConsole.Models;
 using DiscountsConsole.DataAccessLayer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using MongoDB.Driver;
 
 namespace DiscountsConsole
 {
     class Program
     {
+        
+
         static void Main()
         {
+            var builder = Host.CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddTransient<InMemoryDatabase>();
+                    services.AddScoped<IContext, Context>();
+                }).UseConsoleLifetime();
+
+
             string options = $"Options:" +
                    $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
                    $"\n\t\t[-PriceRange [MinPrice, MaxPrice]]\n\t\t[-PriceGreaterThan [double]]" +
@@ -24,7 +37,8 @@ namespace DiscountsConsole
             Console.WriteLine(options);
             while (true)
             {
-                IDatabase db = new InMemoryDatabase();
+                InMemoryDatabase db = new InMemoryDatabase();
+                
                 ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
                 BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(new BrandsDAL(db.Brands));
                 SellersBusinessLogic sellersBll = new SellersBusinessLogic(new SellerDAL(db.Sellers));
