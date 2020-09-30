@@ -21,7 +21,7 @@ namespace DiscountsConsole.Models
 
         public string Display()
         {
-            return $"{Name}\t{Price}\t{Brand}\t{Seller}";
+            return $"{(Name.Length > 7 ? $"{Name}\t" : $"{Name}\t\t")} {Price}\t{Brand}\t{Seller}";
         }
     }
 }

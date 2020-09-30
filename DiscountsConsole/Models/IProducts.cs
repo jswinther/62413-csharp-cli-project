@@ -2,8 +2,8 @@
 
 namespace DiscountsConsole.Models
 {
-    public interface IProducts
+    public interface IProducts<T> where T : IPrice, IName
     {
-        List<Product> Products { get; set; }
+        List<T> Products { get; set; }
     }
 }

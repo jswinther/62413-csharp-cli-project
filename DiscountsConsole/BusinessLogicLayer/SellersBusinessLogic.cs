@@ -3,46 +3,14 @@ using DiscountsConsole.Data;
 using System;
 using System.Collections.Generic;
 using DiscountsConsole.Models;
+using System.Linq;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
-    public class SellersBusinessLogic : IBusinessLogic<Seller>
+    public class SellersBusinessLogic : AbstractProductsBusinessLogic<Seller>
     {
-        SellerDAL DAL;
-        public SellersBusinessLogic(IDatabase db)
+        public SellersBusinessLogic(AbstractDAL<Seller> DAL) : base(DAL)
         {
-            DAL = new SellerDAL(db.Sellers);
-
-        }
-
-        public List<Seller> PriceLessThan(List<Seller> entities, Stack<string> args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Seller> PriceRange(List<Seller> entities, Stack<string> args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Seller> PricerGreaterThan(List<Seller> entities, Stack<string> args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Run(Stack<string> args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Seller> Search(List<Seller> entities, Stack<string> args)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Seller> Sort(List<Seller> entities, Stack<string> args)
-        {
-            throw new NotImplementedException();
         }
     }
 }

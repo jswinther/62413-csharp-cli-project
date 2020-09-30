@@ -40,17 +40,17 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public static List<T> PriceRange<T>(this List<T> ts, double minPrice, double maxPrice) where T : IPrice
         {
-            return ts.Where(s => s.Price > minPrice && s.Price < maxPrice).ToList();
+            return ts.Where(s => s.Price >= minPrice && s.Price <= maxPrice).ToList();
         }
 
         public static List<T> PriceLessThan<T>(this List<T> ts, double maxPrice) where T : IPrice
         {
-            return ts.Where(s => s.Price < maxPrice).ToList();
+            return ts.Where(s => s.Price <= maxPrice).ToList();
         }
 
         public static List<T> PriceGreaterThan<T>(this List<T> ts, double minPrice) where T : IPrice
         {
-            return ts.Where(s => s.Price > minPrice).ToList();
+            return ts.Where(s => s.Price >= minPrice).ToList();
         }
 
         private static int CompareByNameAscending<T>(T x, T y) where T : IName

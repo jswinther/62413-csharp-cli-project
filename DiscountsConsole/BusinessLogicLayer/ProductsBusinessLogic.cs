@@ -11,9 +11,9 @@ namespace DiscountsConsole.BusinessLogicLayer
     public class ProductsBusinessLogic : IBusinessLogic<Product>
     {
         ProductsDAL DAL;
-        public ProductsBusinessLogic(IDatabase db)
+        public ProductsBusinessLogic(ProductsDAL DAL)
         {
-            DAL = new ProductsDAL(db.Products);
+            this.DAL = DAL;
 
         }
 

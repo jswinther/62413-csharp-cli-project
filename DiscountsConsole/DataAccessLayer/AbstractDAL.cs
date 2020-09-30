@@ -1,6 +1,7 @@
 ﻿using DiscountsConsole.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DiscountsConsole.DataAccessLayer
@@ -27,8 +28,9 @@ namespace DiscountsConsole.DataAccessLayer
 
         public List<T> Get()
         {
-            
-            return List;
+            T[] ts = new T[List.Count];
+            List.CopyTo(ts);
+            return ts.ToList();
         }
     }
 }
