@@ -12,7 +12,12 @@ namespace DiscountsConsole.Models
 
         public string Display()
         {
-            throw new NotImplementedException();
+            string display = Name + "\n";
+            foreach (var product in Products)
+            {
+                display += $"{product.Display()}\n";
+            }
+            return display;
         }
     }
 }

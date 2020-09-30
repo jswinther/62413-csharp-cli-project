@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
-    public class ProductsBusinessLogic : IBusinessLogic
+    public class ProductsBusinessLogic : IBusinessLogic<Product>
     {
         ProductsDAL DAL;
         public ProductsBusinessLogic(IDatabase db)
@@ -23,50 +23,68 @@ namespace DiscountsConsole.BusinessLogicLayer
             while (args.Count > 0)
             {
                 var flag = args.Pop().ToUpper();
-                
                 switch (flag)
                 {
                     case "-SORT":
                         products = Sort(products, args);
-                        Console.WriteLine(products.Print());
                         break;
                     case "-NAMESEARCH":
                         products = Search(products, args);
-                        Console.WriteLine(products.Print());
                         break;
                     case "-PRICERANGE":
                         products = PriceRange(products, args);
-                        Console.WriteLine(products.Print());
+                        break;
+                    case "-PRICEGREATERTHAN":
+                        products = PricerGreaterThan(products, args);
+                        break;
+                    case "-PRICELESSERTHAN":
+                        products = PriceLessThan(products, args);
                         break;
                     default:
+                        Console.WriteLine("No flags or args were passed, printing all products");
                         break;
                 }
             }
+            
+            Console.WriteLine(products.Print());
         }
 
-        private static List<Product> PriceRange(List<Product> products, Stack<string> args)
+        public List<Product> PriceLessThan(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop().ToUpper();
-            var maxprice = int.Parse(args.Pop());
-            products = products.PriceRange(int.Parse(arg), maxprice);
-
-            return products;
+            var arg = args.Pop();
+            entities = entities.PriceLessThan(double.Parse(arg));
+            return entities;
         }
 
-        private static List<Product> Search(List<Product> products, Stack<string> args)
+        public List<Product> PricerGreaterThan(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop().ToUpper();
-            products = products.SearchByName(arg);
-            return products;
+            var arg = args.Pop();
+            entities = entities.PriceGreaterThan(double.Parse(arg));
+            return entities;
         }
 
-        private static List<Product> Sort(List<Product> products, Stack<string> args)
+        public List<Product> PriceRange(List<Product> entities, Stack<string> args)
+        {
+            var arg = args.Pop();
+            var maxprice = double.Parse(args.Pop());
+            entities = entities.PriceRange(double.Parse(arg), maxprice);
+            return entities;
+        }
+
+        public List<Product> Search(List<Product> entities, Stack<string> args)
         {
             var arg = args.Pop().ToUpper();
-            if (arg.Equals("NAME")) products = products.SortByNameAscending();
-            else if (arg.Equals("PRICE")) products = products.SortByPriceAscending();
+            entities = entities.SearchByName(arg);
+            return entities;
+        }
+
+        public List<Product> Sort(List<Product> entities, Stack<string> args)
+        {
+            var arg = args.Pop().ToUpper();
+            if (arg.Equals("NAME")) entities = entities.SortByNameAscending();
+            else if (arg.Equals("PRICE")) entities = entities.SortByPriceAscending();
             else throw new Exception("Invalid sorting parameter");
-            return products;
+            return entities;
         }
     }
 }
