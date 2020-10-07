@@ -1,97 +1,525 @@
 [
-    {
-        "Name" : "Solgryn", "Price" : 28, "Brand" : "Ota", "Seller" : "Aldi"
-    },
-    {
-        "Name" : "XXL Schnitzel", "Price" : 24, "Brand" : "Worlds kitchen", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Skæreost", "Price" : 45, "Brand" : "Them", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Delikatesser", "Price" : 10, "Brand" : "pålækker", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Jolly cola", "Price" : 7, "Brand" : "jolly", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "redbull", "Price" : 39, "Brand" : "redbull", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Flødeboller", "Price" : 20, "Brand" : "Samba", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Brødblandinger", "Price" : 12, "Brand" : "Valsmøllen", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Bacon i skiver", "Price" : 5, "Brand" : "Gierlinger", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Joe' kurt", "Price" : 15, "Brand" : "naturli'", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Mælkesnitte", "Price" : 15, "Brand" : "kinder", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Småkager", "Price" : 10, "Brand" : "Nordthy", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Indbagt laksefilet", "Price" : 20, "Brand" : "Rahbek", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Kalvecuvette", "Price" : 45, "Brand" : "landlyst", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Hakket kød", "Price" : 49, "Brand" : "landlyst", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "minipizza", "Price" : 10, "Brand" : "pigga", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Solsikkerugbrød", "Price" : 12, "Brand" : "Kohberg", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Shampoo", "Price" : 20, "Brand" : "head and shoulders", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Morgenmad", "Price" : 35, "Brand" : "nestle", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Yoghurt", "Price" : 14, "Brand" : "yoggi", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Smoothie", "Price" : 10, "Brand" : "Froosh", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "kartoffelsuppe", "Price" : 12, "Brand" : "La finesse", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Ellebryg", "Price" : 10, "Brand" : "Skovlyst", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "markrelfilet", "Price" : 45, "Brand" : "Sæby", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Original chips", "Price" : 12, "Brand" : "pringles", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Bloklys", "Price" : 18, "Brand" : "asp holmblad", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "chelsea støvler", "Price" : 139, "Brand" : "walkx", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Armbåndsur", "Price" : 79, "Brand" : "krontaler", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Sengesæt", "Price" : 129, "Brand" : "Quality textiles", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "Stolehynder", "Price" : 99, "Brand" : "Quality textiles", "Seller" : "Aldi"
-    },
-    {
-      "Name" : "kroge i træ", "Price" : 49, "Brand" : "FSC", "Seller" : "Aldi"
-    }
+  {
+        "Name" : "Solgryn",
+  	  "Price" : 28,
+  	  "Brand" : "Ota",
+  	  "Seller" : "Aldi"
+  },
+  {
+        "Name" : "XXL Schnitzel",
+  	  "Price" : 24,
+  	  "Brand" : "Worlds kitchen",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Skæreost",
+  	  "Price" : 45,
+  	  "Brand" : "Them",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Delikatesser",
+  	  "Price" : 10,
+  	  "Brand" : "pålækker",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Jolly cola",
+  	  "Price" : 7,
+  	  "Brand" : "jolly",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "redbull",
+  	  "Price" : 39,
+  	  "Brand" : "redbull",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Flødeboller",
+  	  "Price" : 20,
+  	  "Brand" : "Samba",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Brødblandinger",
+  	  "Price" : 12,
+  	  "Brand" : "Valsmøllen",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Bacon i skiver",
+  	  "Price" : 5,
+  	  "Brand" : "Gierlinger",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Joe' kurt",
+  	  "Price" : 15,
+  	  "Brand" : "naturli'",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Mælkesnitte",
+  	  "Price" : 15,
+  	  "Brand" : "kinder",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Småkager",
+  	  "Price" : 10,
+  	  "Brand" : "Nordthy",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Indbagt laksefilet",
+  	  "Price" : 20,
+  	  "Brand" : "Rahbek",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Kalvecuvette",
+  	  "Price" : 45,
+  	  "Brand" : "landlyst",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Hakket kød",
+  	  "Price" : 49,
+  	  "Brand" : "landlyst",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "minipizza",
+  	  "Price" : 10,
+  	  "Brand" : "pigga",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Solsikkerugbrød",
+  	  "Price" : 12,
+  	  "Brand" : "Kohberg",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Shampoo",
+  	  "Price" : 20,
+  	  "Brand" : "head and shoulders",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Morgenmad",
+  	  "Price" : 35,
+  	  "Brand" : "nestle",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Yoghurt",
+  	  "Price" : 14,
+  	  "Brand" : "yoggi",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Smoothie",
+  	  "Price" : 10,
+  	  "Brand" : "Froosh",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "kartoffelsuppe",
+  	  "Price" : 12,
+  	  "Brand" : "La finesse",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Ellebryg",
+  	  "Price" : 10,
+  	  "Brand" : "Skovlyst",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "markrelfilet",
+  	  "Price" : 45,
+  	  "Brand" : "Sæby",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Original chips",
+  	  "Price" : 12,
+  	  "Brand" : "pringles",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Bloklys",
+  	  "Price" : 18,
+  	  "Brand" : "asp holmblad",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "chelsea støvler",
+  	  "Price" : 139,
+  	  "Brand" : "walkx",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Armbåndsur",
+  	  "Price" : 79,
+  	  "Brand" : "krontaler",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Sengesæt",
+  	  "Price" : 129,
+  	  "Brand" : "Quality textiles",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "Stolehynder",
+  	  "Price" : 99,
+  	  "Brand" : "Quality textiles",
+  	  "Seller" : "Aldi"
+  },
+  {
+      "Name" : "kroge i træ",
+  	  "Price" : 49,
+  	  "Brand" : "FSC",
+  	  "Seller" : "Aldi"
+  },
 
-    
+
+
+
+  {
+      "Name" : "Cheddar",
+  	  "Price" : 9,
+  	  "Brand" : "Coop",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Brød",
+  	  "Price" : 12,
+  	  "Brand" : "Schulstad",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Flødeboller",
+  	  "Price" : 19,
+  	  "Brand" : "Spangsberg",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Løg",
+  	  "Price" : 6,
+  	  "Brand" : "Coop",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Hel kylling",
+  	  "Price" : 45,
+  	  "Brand" : "Rose",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Skæreost",
+  	  "Price" : 39,
+  	  "Brand" : "thiese",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Skyr",
+  	  "Price" : 25,
+  	  "Brand" : "365økologi",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Brutalis øl",
+  	  "Price" : 6,
+  	  "Brand" : "Brutalis",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Jolly cola",
+  	  "Price" : 7,
+  	  "Brand" : "Jolly",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Cocio original",
+  	  "Price" : 5,
+  	  "Brand" : "Cocio",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Solgryn",
+  	  "Price" : 14,
+  	  "Brand" : "Ota",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Franske valfer",
+  	  "Price" : 10,
+  	  "Brand" : "karen volf",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "SkildpAdde is",
+  	  "Price" : 25,
+  	  "Brand" : "premier is",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Biksemad",
+  	  "Price" : 16,
+  	  "Brand" : "steff houlberg",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "forårsruller",
+  	  "Price" : 20,
+  	  "Brand" : "Daloon",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "honning",
+  	  "Price" : 15,
+  	  "Brand" : "jakobsens",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "markrelfilet",
+  	  "Price" : 12,
+  	  "Brand" : "Amanda",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Smøreost",
+  	  "Price" : 9,
+  	  "Brand" : "Philadelphia",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Karrysild",
+  	  "Price" : 10,
+  	  "Brand" : "xtra",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Æbleskiver",
+  	  "Price" : 12,
+  	  "Brand" : "coop",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Chokoladerulle",
+  	  "Price" : 10,
+  	  "Brand" : "marabou",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Klinkerens",
+  	  "Price" : 15,
+  	  "Brand" : "ajax",
+  	  "Seller" : "Fakta"
+  },
+  {
+      "Name" : "Tandbørste",
+  	  "Price" : 20,
+  	  "Brand" : "colgate",
+  	  "Seller" : "Fakta"
+  },
+
+  {
+      "Name" : "Bleer",
+  	  "Price" : 89,
+  	  "Brand" : "Libero Touch",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Coca Cola",
+  	  "Price" : 11,
+  	  "Brand" : "Coca Cola",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Hakket oksekød 14-18%",
+  	  "Price" : 15,
+  	  "Brand" : "Velsmag",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Cremefine",
+  	  "Price" : 5,
+  	  "Brand" : "Cremefine",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Tomatsauce",
+  	  "Price" : 9,
+  	  "Brand" : "Dolmio",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Toiletpapir",
+  	  "Price" : 10,
+  	  "Brand" : "Godt papir",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Hjemmesko",
+  	  "Price" : 20,
+  	  "Brand" : "Spot-vare",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Plastboks med låg",
+  	  "Price" : 35,
+  	  "Brand" : "Spot-vare",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Veggie Pålæg 70g",
+  	  "Price" : 8,
+  	  "Brand" : "Den grønne slagter",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Rullepølse 70g",
+  	  "Price" : 8,
+  	  "Brand" : "Den grønne slagter",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Kyllingebryst 70g",
+  	  "Price" : 8,
+  	  "Brand" : "Den grønne slagter",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Hel Kylling 1500g",
+  	  "Price" : 79,
+  	  "Brand" : "Legismose",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Hel Kylling 1350g",
+  	  "Price" : 29,
+  	  "Brand" : "Velsmag",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Torskefars",
+  	  "Price" : 15,
+  	  "Brand" : "Havfisk",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Laksefars",
+  	  "Price" : 15,
+  	  "Brand" : "Havfisk",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Asparges Suppe",
+  	  "Price" : 18,
+  	  "Brand" : "Knorr",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Karry Suppe",
+  	  "Price" : 18,
+  	  "Brand" : "Knorr",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Goulash Suppe",
+  	  "Price" : 18,
+  	  "Brand" : "Knorr",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Tomat Suppe",
+  	  "Price" : 18,
+  	  "Brand" : "Knorr",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Mozzarella",
+  	  "Price" : 10,
+  	  "Brand" : "Galbani",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Prosciutto Pizza",
+  	  "Price" : 20,
+  	  "Brand" : "Premieur",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Meat Speciale Pizza",
+  	  "Price" : 20,
+  	  "Brand" : "Premieur",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Mozzarella Pizza",
+  	  "Price" : 20,
+  	  "Brand" : "Premieur",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Multi Juice",
+  	  "Price" : 10,
+  	  "Brand" : "Nikoline",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Mountain Blast",
+  	  "Price" : 10,
+  	  "Brand" : "Powerrade",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Blue Keld B Free",
+  	  "Price" : 10,
+  	  "Brand" : "Blue Keld",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Vanilje Yoghurt",
+  	  "Price" : 9,
+  	  "Brand" : "Cheasy",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Skovbær Yoghurt",
+  	  "Price" : 9,
+  	  "Brand" : "Cheasy",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Jordbær & Rabarber Yoghurt",
+  	  "Price" : 9,
+  	  "Brand" : "Cheasy",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Natural Skyr",
+  	  "Price" : 19,
+  	  "Brand" : "Legismose",
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Vanilje Skyr",
+  	  "Price" : 19,
+  	  "Brand" : "Legismose", 
+  	  "Seller" : "Netto"
+  },
+  {
+      "Name" : "Pære & Banan Skyr",
+  	  "Price" : 19,
+  	  "Brand" : "Legismose",
+  	  "Seller" : "Netto"
+  }
+
+
 ]
