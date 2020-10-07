@@ -1,116 +1,97 @@
 [
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+        "Name" : "Solgryn", "Price" : 28, "Brand" : "Ota", "Seller" : "Aldi"
     },
     {
-        "Name" : "XXL Schnitzel",
-        "Price" : 24,
-        "Brand" : "Worlds kitchen",
-        "Seller" : "Aldi"
+        "Name" : "XXL Schnitzel", "Price" : 24, "Brand" : "Worlds kitchen", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Skæreost", "Price" : 45, "Brand" : "Them", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Delikatesser", "Price" : 10, "Brand" : "pålækker", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Jolly cola", "Price" : 7, "Brand" : "jolly", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "redbull", "Price" : 39, "Brand" : "redbull", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Flødeboller", "Price" : 20, "Brand" : "Samba", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Brødblandinger", "Price" : 12, "Brand" : "Valsmøllen", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Bacon i skiver", "Price" : 5, "Brand" : "Gierlinger", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Joe' kurt", "Price" : 15, "Brand" : "naturli'", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Mælkesnitte", "Price" : 15, "Brand" : "kinder", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Småkager", "Price" : 10, "Brand" : "Nordthy", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Indbagt laksefilet", "Price" : 20, "Brand" : "Rahbek", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Kalvecuvette", "Price" : 45, "Brand" : "landlyst", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Hakket kød", "Price" : 49, "Brand" : "landlyst", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "minipizza", "Price" : 10, "Brand" : "pigga", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Solsikkerugbrød", "Price" : 12, "Brand" : "Kohberg", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Shampoo", "Price" : 20, "Brand" : "head and shoulders", "Seller" : "Aldi"
     },
     {
-        "Name" : "Solgryn",
-        "Price" : 28,
-        "Brand" : "Ota",
-        "Seller" : "Aldi"
+      "Name" : "Morgenmad", "Price" : 35, "Brand" : "nestle", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Yoghurt", "Price" : 14, "Brand" : "yoggi", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Smoothie", "Price" : 10, "Brand" : "Froosh", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "kartoffelsuppe", "Price" : 12, "Brand" : "La finesse", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Ellebryg", "Price" : 10, "Brand" : "Skovlyst", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "markrelfilet", "Price" : 45, "Brand" : "Sæby", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Original chips", "Price" : 12, "Brand" : "pringles", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Bloklys", "Price" : 18, "Brand" : "asp holmblad", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "chelsea støvler", "Price" : 139, "Brand" : "walkx", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Armbåndsur", "Price" : 79, "Brand" : "krontaler", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Sengesæt", "Price" : 129, "Brand" : "Quality textiles", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "Stolehynder", "Price" : 99, "Brand" : "Quality textiles", "Seller" : "Aldi"
+    },
+    {
+      "Name" : "kroge i træ", "Price" : 49, "Brand" : "FSC", "Seller" : "Aldi"
     }
+
+    
 ]
