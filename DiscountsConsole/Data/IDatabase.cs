@@ -5,8 +5,8 @@ namespace DiscountsConsole.Data
 {
     public interface IDatabase
     {
-        List<Brand> Brands { get; set; }
-        List<Product> Products { get; set; }
-        List<Seller> Sellers { get; set; }
+        List<Brand> Brands { get; }
+        List<Product> Products { get; }
+        List<Seller> Sellers { get; }
     }
 }

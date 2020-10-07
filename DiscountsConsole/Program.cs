@@ -13,32 +13,31 @@ namespace DiscountsConsole
 {
     class Program
     {
-        
-
         static void Main()
         {
-            var builder = Host.CreateDefaultBuilder()
-                .ConfigureServices((hostContext, services) =>
-                {
-                    services.AddTransient<InMemoryDatabase>();
-                    services.AddScoped<IContext, Context>();
-                }).UseConsoleLifetime();
+            var a = new DiscountsMongoDB();
+            foreach (var item in a.GetCollection<Product>("Products"))
+            {
+                Console.WriteLine(item.Name + item.Price + item.Seller);
+            }
+
+
 
 
             string options = $"Options:" +
-                   $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
-                   $"\n\t\t[-PriceRange [MinPrice, MaxPrice]]\n\t\t[-PriceGreaterThan [double]]" +
-                   $"\n\t\t[-PriceLesserThan [double]]" +
-                   $"\n\t-Brands\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
-                   $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
-                   $"\n\t-Admin\n\t\t[-Add Product [params]]" +
-                   $"\n\t-Help" +
-                   $"\n\t Press Ctrl+C to exit";
+                $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
+                $"\n\t\t[-PriceRange [MinPrice, MaxPrice]]\n\t\t[-PriceGreaterThan [double]]" +
+                $"\n\t\t[-PriceLesserThan [double]]" +
+                $"\n\t-Brands\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
+                $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
+                $"\n\t-Admin\n\t\t[-Add Product [params]]" +
+                $"\n\t-Help" +
+                $"\n\t Press Ctrl+C to exit";
             Console.WriteLine(options);
             while (true)
             {
                 InMemoryDatabase db = new InMemoryDatabase();
-                
+
                 ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
                 BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(new BrandsDAL(db.Brands));
                 SellersBusinessLogic sellersBll = new SellersBusinessLogic(new SellerDAL(db.Sellers));

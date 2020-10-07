@@ -9,14 +9,6 @@ namespace DiscountsConsole.Data
 {
     public class InMemoryDatabase : IDatabase
     {
-        private readonly IContext _context;
-        public IMongoCollection<Product> collection { get; set; }
-        public InMemoryDatabase(IContext context)
-        {
-            _context = context;
-            collection = _context.GetCollection<Product>(typeof(Product).Name);
-        }
-
         public InMemoryDatabase()
         {
             // Aldi tilbudsavis
@@ -123,8 +115,8 @@ namespace DiscountsConsole.Data
             }
         }
 
-        public List<Product> Products { get; set; } = new List<Product>();
-        public List<Brand> Brands { get; set; } = new List<Brand>();
-        public List<Seller> Sellers { get; set; } = new List<Seller>();
+        public List<Product> Products { get; } = new List<Product>();
+        public List<Brand> Brands { get; } = new List<Brand>();
+        public List<Seller> Sellers { get; } = new List<Seller>();
     }
 }
