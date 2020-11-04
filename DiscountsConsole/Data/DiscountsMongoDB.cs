@@ -35,6 +35,16 @@ namespace DiscountsConsole.Data
 
         public void Add(Product t)
         {
+            List<Product> products = new List<Product>();
+
+            var a = products.Where(product => product.Brand == "Mælk").ToList();
+            var b = products.Select(product => product.Brand).Distinct();
+
+
+
+
+
+
             if (Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
             {
                 throw new Exception("Duplicate product");
@@ -51,7 +61,8 @@ namespace DiscountsConsole.Data
 
             if (Brands.AsList().Select(s => s.Name).Contains(t.Brand))
             {
-                //Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products.Add(t)));
+                
+                Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products, Products.AsList().Where(e => e.Brand == t.Brand).ToList()));
             }
             else
             {
