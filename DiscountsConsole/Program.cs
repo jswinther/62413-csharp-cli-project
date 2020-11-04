@@ -15,17 +15,45 @@ namespace DiscountsConsole
     {
         static void Main()
         {
-            //IDatabase db = new InMemoryDatabase();
-
-
-
-            IDatabase db = new DiscountsMongoDB();
             
+           
+            string loginOptions = $"Welcome, please select login method by typing either:" +
+             $"\n\t-User " +
+             $"\n\t-Admin " +
+             $"\n\t Press Ctrl+C to exit";
+            while (true)
+            {
+                Console.WriteLine(loginOptions);
+                var input = Console.ReadLine().ToUpper();
+                switch (input)
+                {
+                    case "-USER":
+                        userLayer();
+                        break;
+                    case "-ADMIN":
+                        Console.WriteLine("Please Write your password");
+                        input = Console.ReadLine().ToUpper();
+                        if(input == "1234")
+                        {
+                            adminLayer();
+                        }
+                        break;
+                    default:
+                        Console.WriteLine($"Invalid args {input}");
+                        break;
+                }
+            }
+        }
 
+        private static void adminLayer()
+        {
+            Console.WriteLine("Yo wutup it's ya boy admingold");
+        }
 
-            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db));
-            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db));
-            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db));
+        private static void userLayer ()
+        {
+            bool userLoggedIn = true;
+
 
             string options = $"Options:" +
                 $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
@@ -35,11 +63,18 @@ namespace DiscountsConsole
                 $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
                 $"\n\t-Admin\n\t\t[-Add Product [params]]" +
                 $"\n\t-Help" +
+                $"\n\t-Logout" +
                 $"\n\t Press Ctrl+C to exit";
             Console.WriteLine(options);
-            while (true)
+
+            //IDatabase db = new InMemoryDatabase();
+            IDatabase db = new DiscountsMongoDB();
+            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
+            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.Brands));
+            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.Sellers));
+
+            while(userLoggedIn)
             {
-                
                 var input = Console.ReadLine().Split(' ');
                 Array.Reverse(input);
                 Stack<string> args = new Stack<string>(input);
@@ -58,11 +93,15 @@ namespace DiscountsConsole
                     case "-HELP":
                         Console.WriteLine(options);
                         break;
+                    case "-LOGOUT":
+                        userLoggedIn = false;
+                        break;
                     default:
                         Console.WriteLine($"Invalid args {arg}");
                         break;
                 }
             }
         }
+            
     }
 }
