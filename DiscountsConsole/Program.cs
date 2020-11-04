@@ -15,13 +15,17 @@ namespace DiscountsConsole
     {
         static void Main()
         {
-            var a = new DiscountsMongoDB();
-            foreach (var item in a.GetCollection<Product>("Products"))
+            //IDatabase db = new InMemoryDatabase();
+            var db = new DiscountsMongoDB();
+            
+            foreach (var item in db.GetCollection<Product>("Products"))
             {
                 Console.WriteLine(item.Name + item.Price + item.Seller);
             }
 
-
+            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
+            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.Brands));
+            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.Sellers));
 
 
             string options = $"Options:" +
@@ -36,11 +40,7 @@ namespace DiscountsConsole
             Console.WriteLine(options);
             while (true)
             {
-                InMemoryDatabase db = new InMemoryDatabase();
-
-                ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
-                BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(new BrandsDAL(db.Brands));
-                SellersBusinessLogic sellersBll = new SellersBusinessLogic(new SellerDAL(db.Sellers));
+                
                 var input = Console.ReadLine().Split(' ');
                 Array.Reverse(input);
                 Stack<string> args = new Stack<string>(input);

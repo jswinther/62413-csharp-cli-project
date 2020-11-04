@@ -1,0 +1,1244 @@
+[{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f66"
+  },
+  "Name": "Ota",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc1"
+      },
+      "Name": "Solgryn",
+      "Price": 28,
+      "Brand": "Ota",
+      "Seller": "Aldi"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbea"
+      },
+      "Name": "Solgryn",
+      "Price": 14,
+      "Brand": "Ota",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f67"
+  },
+  "Name": "Worlds kitchen",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc2"
+      },
+      "Name": "XXL Schnitzel",
+      "Price": 24,
+      "Brand": "Worlds kitchen",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f68"
+  },
+  "Name": "Them",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc3"
+      },
+      "Name": "Skæreost",
+      "Price": 45,
+      "Brand": "Them",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f69"
+  },
+  "Name": "pålækker",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc4"
+      },
+      "Name": "Delikatesser",
+      "Price": 10,
+      "Brand": "pålækker",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6a"
+  },
+  "Name": "jolly",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc5"
+      },
+      "Name": "Jolly cola",
+      "Price": 7,
+      "Brand": "jolly",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6b"
+  },
+  "Name": "redbull",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc6"
+      },
+      "Name": "redbull",
+      "Price": 39,
+      "Brand": "redbull",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6c"
+  },
+  "Name": "Samba",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc7"
+      },
+      "Name": "Flødeboller",
+      "Price": 20,
+      "Brand": "Samba",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6d"
+  },
+  "Name": "Valsmøllen",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc8"
+      },
+      "Name": "Brødblandinger",
+      "Price": 12,
+      "Brand": "Valsmøllen",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6e"
+  },
+  "Name": "Gierlinger",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbc9"
+      },
+      "Name": "Bacon i skiver",
+      "Price": 5,
+      "Brand": "Gierlinger",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f6f"
+  },
+  "Name": "naturli'",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbca"
+      },
+      "Name": "Joe' kurt",
+      "Price": 15,
+      "Brand": "naturli'",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f70"
+  },
+  "Name": "kinder",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbcb"
+      },
+      "Name": "Mælkesnitte",
+      "Price": 15,
+      "Brand": "kinder",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f71"
+  },
+  "Name": "Nordthy",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbcc"
+      },
+      "Name": "Småkager",
+      "Price": 10,
+      "Brand": "Nordthy",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f72"
+  },
+  "Name": "Rahbek",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbcd"
+      },
+      "Name": "Indbagt laksefilet",
+      "Price": 20,
+      "Brand": "Rahbek",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f73"
+  },
+  "Name": "landlyst",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbce"
+      },
+      "Name": "Kalvecuvette",
+      "Price": 45,
+      "Brand": "landlyst",
+      "Seller": "Aldi"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbcf"
+      },
+      "Name": "Hakket kød",
+      "Price": 49,
+      "Brand": "landlyst",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f74"
+  },
+  "Name": "pigga",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd0"
+      },
+      "Name": "minipizza",
+      "Price": 10,
+      "Brand": "pigga",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f75"
+  },
+  "Name": "Kohberg",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd1"
+      },
+      "Name": "Solsikkerugbrød",
+      "Price": 12,
+      "Brand": "Kohberg",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f76"
+  },
+  "Name": "head and shoulders",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd2"
+      },
+      "Name": "Shampoo",
+      "Price": 20,
+      "Brand": "head and shoulders",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f77"
+  },
+  "Name": "nestle",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd3"
+      },
+      "Name": "Morgenmad",
+      "Price": 35,
+      "Brand": "nestle",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f78"
+  },
+  "Name": "yoggi",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd4"
+      },
+      "Name": "Yoghurt",
+      "Price": 14,
+      "Brand": "yoggi",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f79"
+  },
+  "Name": "Froosh",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd5"
+      },
+      "Name": "Smoothie",
+      "Price": 10,
+      "Brand": "Froosh",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7a"
+  },
+  "Name": "La finesse",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd6"
+      },
+      "Name": "kartoffelsuppe",
+      "Price": 12,
+      "Brand": "La finesse",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7b"
+  },
+  "Name": "Skovlyst",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd7"
+      },
+      "Name": "Ellebryg",
+      "Price": 10,
+      "Brand": "Skovlyst",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7c"
+  },
+  "Name": "Sæby",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd8"
+      },
+      "Name": "markrelfilet",
+      "Price": 45,
+      "Brand": "Sæby",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7d"
+  },
+  "Name": "pringles",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbd9"
+      },
+      "Name": "Original chips",
+      "Price": 12,
+      "Brand": "pringles",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7e"
+  },
+  "Name": "asp holmblad",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbda"
+      },
+      "Name": "Bloklys",
+      "Price": 18,
+      "Brand": "asp holmblad",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f7f"
+  },
+  "Name": "walkx",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbdb"
+      },
+      "Name": "chelsea støvler",
+      "Price": 139,
+      "Brand": "walkx",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f80"
+  },
+  "Name": "krontaler",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbdc"
+      },
+      "Name": "Armbåndsur",
+      "Price": 79,
+      "Brand": "krontaler",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f81"
+  },
+  "Name": "Quality textiles",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbdd"
+      },
+      "Name": "Sengesæt",
+      "Price": 129,
+      "Brand": "Quality textiles",
+      "Seller": "Aldi"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbde"
+      },
+      "Name": "Stolehynder",
+      "Price": 99,
+      "Brand": "Quality textiles",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f82"
+  },
+  "Name": "FSC",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbdf"
+      },
+      "Name": "kroge i træ",
+      "Price": 49,
+      "Brand": "FSC",
+      "Seller": "Aldi"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f83"
+  },
+  "Name": "Coop",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe0"
+      },
+      "Name": "Cheddar",
+      "Price": 9,
+      "Brand": "Coop",
+      "Seller": "Fakta"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe3"
+      },
+      "Name": "Løg",
+      "Price": 6,
+      "Brand": "Coop",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f84"
+  },
+  "Name": "Schulstad",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe1"
+      },
+      "Name": "Brød",
+      "Price": 12,
+      "Brand": "Schulstad",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f85"
+  },
+  "Name": "Spangsberg",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe2"
+      },
+      "Name": "Flødeboller",
+      "Price": 19,
+      "Brand": "Spangsberg",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f86"
+  },
+  "Name": "Rose",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe4"
+      },
+      "Name": "Hel kylling",
+      "Price": 45,
+      "Brand": "Rose",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f87"
+  },
+  "Name": "thiese",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe5"
+      },
+      "Name": "Skæreost",
+      "Price": 39,
+      "Brand": "thiese",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f88"
+  },
+  "Name": "365økologi",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe6"
+      },
+      "Name": "Skyr",
+      "Price": 25,
+      "Brand": "365økologi",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f89"
+  },
+  "Name": "Brutalis",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe7"
+      },
+      "Name": "Brutalis øl",
+      "Price": 6,
+      "Brand": "Brutalis",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8a"
+  },
+  "Name": "Jolly",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe8"
+      },
+      "Name": "Jolly cola",
+      "Price": 7,
+      "Brand": "Jolly",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8b"
+  },
+  "Name": "Cocio",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbe9"
+      },
+      "Name": "Cocio original",
+      "Price": 5,
+      "Brand": "Cocio",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8c"
+  },
+  "Name": "karen volf",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbeb"
+      },
+      "Name": "Franske valfer",
+      "Price": 10,
+      "Brand": "karen volf",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8d"
+  },
+  "Name": "premier is",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbec"
+      },
+      "Name": "SkildpAdde is",
+      "Price": 25,
+      "Brand": "premier is",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8e"
+  },
+  "Name": "steff houlberg",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbed"
+      },
+      "Name": "Biksemad",
+      "Price": 16,
+      "Brand": "steff houlberg",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f8f"
+  },
+  "Name": "Daloon",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbee"
+      },
+      "Name": "forårsruller",
+      "Price": 20,
+      "Brand": "Daloon",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f90"
+  },
+  "Name": "jakobsens",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbef"
+      },
+      "Name": "honning",
+      "Price": 15,
+      "Brand": "jakobsens",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f91"
+  },
+  "Name": "Amanda",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf0"
+      },
+      "Name": "markrelfilet",
+      "Price": 12,
+      "Brand": "Amanda",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f92"
+  },
+  "Name": "Philadelphia",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf1"
+      },
+      "Name": "Smøreost",
+      "Price": 9,
+      "Brand": "Philadelphia",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f93"
+  },
+  "Name": "xtra",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf2"
+      },
+      "Name": "Karrysild",
+      "Price": 10,
+      "Brand": "xtra",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f94"
+  },
+  "Name": "coop",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf3"
+      },
+      "Name": "Æbleskiver",
+      "Price": 12,
+      "Brand": "coop",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f95"
+  },
+  "Name": "marabou",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf4"
+      },
+      "Name": "Chokoladerulle",
+      "Price": 10,
+      "Brand": "marabou",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f96"
+  },
+  "Name": "ajax",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf5"
+      },
+      "Name": "Klinkerens",
+      "Price": 15,
+      "Brand": "ajax",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f97"
+  },
+  "Name": "colgate",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf6"
+      },
+      "Name": "Tandbørste",
+      "Price": 20,
+      "Brand": "colgate",
+      "Seller": "Fakta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f98"
+  },
+  "Name": "Libero Touch",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf7"
+      },
+      "Name": "Bleer",
+      "Price": 89,
+      "Brand": "Libero Touch",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f99"
+  },
+  "Name": "Coca Cola",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf8"
+      },
+      "Name": "Coca Cola",
+      "Price": 11,
+      "Brand": "Coca Cola",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9a"
+  },
+  "Name": "Velsmag",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbf9"
+      },
+      "Name": "Hakket oksekød 14-18%",
+      "Price": 15,
+      "Brand": "Velsmag",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc03"
+      },
+      "Name": "Hel Kylling 1350g",
+      "Price": 29,
+      "Brand": "Velsmag",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9b"
+  },
+  "Name": "Cremefine",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbfa"
+      },
+      "Name": "Cremefine",
+      "Price": 5,
+      "Brand": "Cremefine",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9c"
+  },
+  "Name": "Dolmio",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbfb"
+      },
+      "Name": "Tomatsauce",
+      "Price": 9,
+      "Brand": "Dolmio",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9d"
+  },
+  "Name": "Godt papir",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbfc"
+      },
+      "Name": "Toiletpapir",
+      "Price": 10,
+      "Brand": "Godt papir",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9e"
+  },
+  "Name": "Spot-vare",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbfd"
+      },
+      "Name": "Hjemmesko",
+      "Price": 20,
+      "Brand": "Spot-vare",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbfe"
+      },
+      "Name": "Plastboks med låg",
+      "Price": 35,
+      "Brand": "Spot-vare",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708f9f"
+  },
+  "Name": "Den grønne slagter",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fbff"
+      },
+      "Name": "Veggie Pålæg 70g",
+      "Price": 8,
+      "Brand": "Den grønne slagter",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc00"
+      },
+      "Name": "Rullepølse 70g",
+      "Price": 8,
+      "Brand": "Den grønne slagter",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc01"
+      },
+      "Name": "Kyllingebryst 70g",
+      "Price": 8,
+      "Brand": "Den grønne slagter",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa0"
+  },
+  "Name": "Legismose",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc02"
+      },
+      "Name": "Hel Kylling 1500g",
+      "Price": 79,
+      "Brand": "Legismose",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc14"
+      },
+      "Name": "Natural Skyr",
+      "Price": 19,
+      "Brand": "Legismose",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc15"
+      },
+      "Name": "Vanilje Skyr",
+      "Price": 19,
+      "Brand": "Legismose",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc16"
+      },
+      "Name": "Pære & Banan Skyr",
+      "Price": 19,
+      "Brand": "Legismose",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa1"
+  },
+  "Name": "Havfisk",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc04"
+      },
+      "Name": "Torskefars",
+      "Price": 15,
+      "Brand": "Havfisk",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc05"
+      },
+      "Name": "Laksefars",
+      "Price": 15,
+      "Brand": "Havfisk",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa2"
+  },
+  "Name": "Knorr",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc06"
+      },
+      "Name": "Asparges Suppe",
+      "Price": 18,
+      "Brand": "Knorr",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc07"
+      },
+      "Name": "Karry Suppe",
+      "Price": 18,
+      "Brand": "Knorr",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc08"
+      },
+      "Name": "Goulash Suppe",
+      "Price": 18,
+      "Brand": "Knorr",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc09"
+      },
+      "Name": "Tomat Suppe",
+      "Price": 18,
+      "Brand": "Knorr",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa3"
+  },
+  "Name": "Galbani",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0a"
+      },
+      "Name": "Mozzarella",
+      "Price": 10,
+      "Brand": "Galbani",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa4"
+  },
+  "Name": "Premieur",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0b"
+      },
+      "Name": "Prosciutto Pizza",
+      "Price": 20,
+      "Brand": "Premieur",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0c"
+      },
+      "Name": "Meat Speciale Pizza",
+      "Price": 20,
+      "Brand": "Premieur",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0d"
+      },
+      "Name": "Mozzarella Pizza",
+      "Price": 20,
+      "Brand": "Premieur",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa5"
+  },
+  "Name": "Nikoline",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0e"
+      },
+      "Name": "Multi Juice",
+      "Price": 10,
+      "Brand": "Nikoline",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa6"
+  },
+  "Name": "Powerrade",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc0f"
+      },
+      "Name": "Mountain Blast",
+      "Price": 10,
+      "Brand": "Powerrade",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa7"
+  },
+  "Name": "Blue Keld",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc10"
+      },
+      "Name": "Blue Keld B Free",
+      "Price": 10,
+      "Brand": "Blue Keld",
+      "Seller": "Netto"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5fa26bbc467862d323708fa8"
+  },
+  "Name": "Cheasy",
+  "Products": [
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc11"
+      },
+      "Name": "Vanilje Yoghurt",
+      "Price": 9,
+      "Brand": "Cheasy",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc12"
+      },
+      "Name": "Skovbær Yoghurt",
+      "Price": 9,
+      "Brand": "Cheasy",
+      "Seller": "Netto"
+    },
+    {
+      "_id": {
+        "$oid": "5fa264e00d3ff34cbc52fc13"
+      },
+      "Name": "Jordbær & Rabarber Yoghurt",
+      "Price": 9,
+      "Brand": "Cheasy",
+      "Seller": "Netto"
+    }
+  ]
+}]

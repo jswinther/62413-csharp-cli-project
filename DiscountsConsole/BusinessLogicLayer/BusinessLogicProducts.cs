@@ -8,11 +8,11 @@ using System.Text;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
-    public abstract class AbstractProductsBusinessLogic<T> : IBusinessLogic<T> where T : IProducts<Product>, IName
+    public class BusinessLogicProducts<T> : IBusinessLogic<T> where T : IProducts<Product>, IName
     {
         protected AbstractDAL<T> DAL;
 
-        protected AbstractProductsBusinessLogic(AbstractDAL<T> dAL)
+        public BusinessLogicProducts(AbstractDAL<T> dAL)
         {
             DAL = dAL ?? throw new ArgumentNullException(nameof(dAL));
         }
