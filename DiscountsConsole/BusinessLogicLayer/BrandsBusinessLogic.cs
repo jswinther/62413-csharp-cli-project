@@ -1,5 +1,5 @@
 ﻿using ConsoleTables;
-using DiscountsConsole.DataAccessLayer;
+using DiscountsConsole.Data;
 using DiscountsConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -8,16 +8,16 @@ using System.Text;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
-    public class BusinessLogicProducts<T> : IBusinessLogic<T> where T : IProducts<Product>, IName
+    public class BrandsBusinessLogic : IBusinessLogic<Brand>
     {
-        protected AbstractDAL<T> DAL;
+        protected IDatabase db;
 
-        public BusinessLogicProducts(AbstractDAL<T> dAL)
+        public BrandsBusinessLogic(IDatabase db)
         {
-            DAL = dAL ?? throw new ArgumentNullException(nameof(dAL));
+            this.db = db ?? throw new ArgumentNullException(nameof(db));
         }
 
-        public List<T> PriceLessThan(List<T> entities, Stack<string> args)
+        public List<Brand> PriceLessThan(List<Brand> entities, Stack<string> args)
         {
             var arg1 = double.Parse(args.Pop());
             foreach (var brand in entities)
@@ -27,7 +27,7 @@ namespace DiscountsConsole.BusinessLogicLayer
             return entities.Where(brand => brand.Products.Count > 0).ToList();
         }
 
-        public List<T> PriceRange(List<T> entities, Stack<string> args)
+        public List<Brand> PriceRange(List<Brand> entities, Stack<string> args)
         {
             var arg1 = double.Parse(args.Pop());
             var arg2 = double.Parse(args.Pop());
@@ -38,7 +38,7 @@ namespace DiscountsConsole.BusinessLogicLayer
             return entities.Where(brand => brand.Products.Count > 0).ToList();
         }
 
-        public List<T> PricerGreaterThan(List<T> entities, Stack<string> args)
+        public List<Brand> PricerGreaterThan(List<Brand> entities, Stack<string> args)
         {
             var arg1 = double.Parse(args.Pop());
             foreach (var brand in entities)
@@ -50,7 +50,7 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public void Run(Stack<string> args)
         {
-            List<T> brands = DAL.Get();
+            List<Brand> brands = db.GetBrands();
             while (args.Count > 0)
             {
                 var flag = args.Pop().ToUpper();
@@ -89,14 +89,14 @@ namespace DiscountsConsole.BusinessLogicLayer
             }
         }
 
-        public List<T> Search(List<T> entities, Stack<string> args)
+        public List<Brand> Search(List<Brand> entities, Stack<string> args)
         {
             var arg = args.Pop().ToUpper();
             entities = entities.SearchByName(arg);
             return entities;
         }
 
-        public List<T> Sort(List<T> entities, Stack<string> args)
+        public List<Brand> Sort(List<Brand> entities, Stack<string> args)
         {
             var arg1 = args.Pop().ToUpper();
             var arg2 = args.Pop().ToUpper();
@@ -110,7 +110,7 @@ namespace DiscountsConsole.BusinessLogicLayer
                 {
                     entities = entities.SortByNameDescending();
                 }
-                
+
             }
             else if (arg1.Equals("PRICE"))
             {

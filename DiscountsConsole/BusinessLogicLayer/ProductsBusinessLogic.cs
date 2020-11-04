@@ -1,5 +1,4 @@
-﻿using DiscountsConsole.DataAccessLayer;
-using DiscountsConsole.Data;
+﻿using DiscountsConsole.Data;
 using DiscountsConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -11,16 +10,16 @@ namespace DiscountsConsole.BusinessLogicLayer
 {
     public class ProductsBusinessLogic : IBusinessLogic<Product>
     {
-        ProductsDAL DAL;
-        public ProductsBusinessLogic(ProductsDAL DAL)
+        IDatabase db;
+        public ProductsBusinessLogic(IDatabase db)
         {
-            this.DAL = DAL;
+            this.db = db;
 
         }
 
         public void Run(Stack<string> args)
         {
-            List<Product> products = DAL.Get();
+            List<Product> products = db.GetProducts();
             while (args.Count > 0)
             {
                 var flag = args.Pop().ToUpper();
@@ -90,6 +89,8 @@ namespace DiscountsConsole.BusinessLogicLayer
             var price = double.Parse(args.Pop());
             var brand = args.Pop();
             var seller = args.Pop();
+            var product = new Product(name, price, brand, seller);
+            db.Add(product);
         }
 
         public List<Product> Sort(List<Product> entities, Stack<string> args)

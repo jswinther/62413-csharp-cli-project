@@ -4,7 +4,6 @@ using System.Linq;
 using DiscountsConsole.BusinessLogicLayer;
 using System.Collections.Generic;
 using DiscountsConsole.Models;
-using DiscountsConsole.DataAccessLayer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
@@ -17,14 +16,12 @@ namespace DiscountsConsole
 
         static void Main()
         {
-            
-   
-
+           
             //IDatabase db = new InMemoryDatabase();
             IDatabase db = new DiscountsMongoDB();
-            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.GetProducts()));
-            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.GetBrands()));
-            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.GetSellers()));
+            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(db);
+            BrandsBusinessLogic brandsBll = new BrandsBusinessLogic(db);
+            SellersBusinessLogic sellersBll = new SellersBusinessLogic(db);
 
             while (true)
             {

@@ -36,6 +36,10 @@ namespace DiscountsConsole.Data
         public void Add(Product t)
         {
             Products.InsertOne(t);
+            if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
+            {
+                Sellers.FindOneAndUpdate(e => e.Name == t.Seller, Builders<Seller>.Update.Set(e => e.Products.Add(t)));
+            }
         }
 
         public void Add(Seller t)
