@@ -48,30 +48,19 @@ namespace DiscountsConsole.Data
             Brands.InsertOne(t);
         }
 
-        public List<T> Get<T>() where T : class
+        public List<Brand> GetBrands()
         {
-            switch (typeof(T).Name)
-            {
-                case "Product":
-                    return Products.AsList();
-                default:
-                    break;
-            }
+            return Brands.AsList();
         }
 
-        public List<Product> Get()
+        public List<Product> GetProducts()
         {
             return Products.AsList();
         }
 
-        List<Seller> IDatabaseCollection<Seller>.Get()
+        public List<Seller> GetSellers()
         {
             return Sellers.AsList();
-        }
-
-        List<Brand> IDatabaseCollection<Brand>.Get()
-        {
-            return Brands.AsList();
         }
     }
 }

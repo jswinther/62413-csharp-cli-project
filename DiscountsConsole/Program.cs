@@ -69,9 +69,9 @@ namespace DiscountsConsole
 
             //IDatabase db = new InMemoryDatabase();
             IDatabase db = new DiscountsMongoDB();
-            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
-            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.Brands));
-            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.Sellers));
+            ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.GetProducts()));
+            BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.GetBrands()));
+            BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.GetSellers()));
 
             while(userLoggedIn)
             {

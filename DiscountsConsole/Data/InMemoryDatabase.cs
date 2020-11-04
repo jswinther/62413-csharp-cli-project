@@ -134,19 +134,19 @@ namespace DiscountsConsole.Data
             Brands.Add(t);
         }
 
-        public List<Product> Get()
+        public List<Brand> GetBrands()
+        {
+            return Brands.ToList();
+        }
+
+        public List<Product> GetProducts()
         {
             return Products.ToList();
         }
 
-        List<Seller> IDatabaseCollection<Seller>.Get()
+        public List<Seller> GetSellers()
         {
             return Sellers.ToList();
-        }
-
-        List<Brand> IDatabaseCollection<Brand>.Get()
-        {
-            return Brands.ToList();
         }
     }
 }
