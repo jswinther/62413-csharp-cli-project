@@ -119,6 +119,21 @@ namespace DiscountsConsole.Data
         private List<Brand> Brands { get; } = new List<Brand>();
         private List<Seller> Sellers { get; } = new List<Seller>();
 
+        public void Delete(Product t)
+        {
+            Products.Remove(t);
+        }
+
+        public void Delete(Seller t)
+        {
+            Sellers.Remove(t);
+        }
+
+        public void Delete(Brand t)
+        {
+            Brands.Remove(t);
+        }
+
         public void Add(Product t)
         {
             Products.Add(t);

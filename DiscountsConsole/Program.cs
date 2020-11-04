@@ -32,6 +32,7 @@ namespace DiscountsConsole
                     $"\n\t-Brands\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
                     $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
                     $"{(isAdmin ? "\n\t-Add [Name Price Brand Seller]\n\t-Logout" : "\n\t-Login")}" +
+                    $"{(isAdmin ? "\n\t-Delete [Name Price Brand Seller]\n\t-Logout" : "")}" +
                     $"\n\t-Help" +
                     $"\n\t Press Ctrl+C to exit";
                 Console.WriteLine(options);
@@ -63,6 +64,9 @@ namespace DiscountsConsole
                         break;
                     case "-ADD":
                         if (isAdmin) productsBll.Add(args); else goto default;
+                        break;
+                    case "-DELETE":
+                        if (isAdmin) productsBll.Delete(args); else goto default;
                         break;
                     default:
                         Console.WriteLine($"Invalid args {arg}");

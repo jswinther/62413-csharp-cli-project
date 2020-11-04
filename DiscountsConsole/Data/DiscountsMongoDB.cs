@@ -37,17 +37,14 @@ namespace DiscountsConsole.Data
         {
             List<Product> products = new List<Product>();
 
-            var a = products.Where(product => product.Brand == "Mælk").ToList();
-            var b = products.Select(product => product.Brand).Distinct();
-
-
-
-
+//            var a = products.Where(product => product.Brand == "Mælk").ToList();
+//            var b = products.Select(product => product.Brand).Distinct();
 
 
             if (Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
             {
-                throw new Exception("Duplicate product");
+                Console.WriteLine("Product already exists");
+                //throw new Exception("Duplicate product");
             }
             Products.InsertOne(t);
             if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
@@ -62,7 +59,7 @@ namespace DiscountsConsole.Data
             if (Brands.AsList().Select(s => s.Name).Contains(t.Brand))
             {
                 
-                Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products, Products.AsList().Where(e => e.Brand == t.Brand).ToList()));
+                //Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products, Products.AsList().Where(e => e.Brand == t.Brand).ToList()));
             }
             else
             {
@@ -78,6 +75,24 @@ namespace DiscountsConsole.Data
         public void Add(Brand t)
         {
             Brands.InsertOne(t);
+        }
+
+
+        public void Delete(Product t)
+        {
+            Products.FindOneAndDelete(p => p.Name == t.Name && p.Price == t.Price && p.Brand == t.Brand && p.Seller == t.Seller);
+        }
+
+        // Bør vi kunne slette sellers?
+        public void Delete(Seller t)
+        {
+            Sellers.FindOneAndDelete(s => s.Name == t.Name);
+        }
+
+        // Bør vi kunne slette brands?
+        public void Delete(Brand t)
+        {
+            Brands.FindOneAndDelete(s => s.Name == t.Name);
         }
 
         public List<Brand> GetBrands()
