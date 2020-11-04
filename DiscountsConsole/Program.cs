@@ -17,12 +17,10 @@ namespace DiscountsConsole
         {
             //IDatabase db = new InMemoryDatabase();
             var db = new DiscountsMongoDB();
-            
 
             ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
             BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.Brands));
             BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.Sellers));
-
 
             string options = $"Options:" +
                 $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +

@@ -57,23 +57,23 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public List<Product> PriceLessThan(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop();
-            entities = entities.PriceLessThan(double.Parse(arg));
+            var maxprice = args.Pop();
+            entities = entities.PriceLessThan(double.Parse(maxprice));
             return entities;
         }
 
         public List<Product> PricerGreaterThan(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop();
-            entities = entities.PriceGreaterThan(double.Parse(arg));
+            var minprice = args.Pop();
+            entities = entities.PriceGreaterThan(double.Parse(minprice));
             return entities;
         }
 
         public List<Product> PriceRange(List<Product> entities, Stack<string> args)
         {
-            var arg = args.Pop();
+            var minprice = args.Pop();
             var maxprice = double.Parse(args.Pop());
-            entities = entities.PriceRange(double.Parse(arg), maxprice);
+            entities = entities.PriceRange(double.Parse(minprice), maxprice);
             return entities;
         }
 
