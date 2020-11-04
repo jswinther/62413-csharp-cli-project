@@ -84,6 +84,14 @@ namespace DiscountsConsole.BusinessLogicLayer
             return entities;
         }
 
+        internal void Add(Stack<string> args)
+        {
+            var name = args.Pop();
+            var price = double.Parse(args.Pop());
+            var brand = args.Pop();
+            var seller = args.Pop();
+        }
+
         public List<Product> Sort(List<Product> entities, Stack<string> args)
         {
             var arg1 = args.Pop().ToUpper();
@@ -98,8 +106,6 @@ namespace DiscountsConsole.BusinessLogicLayer
                 {
                     entities = entities.SortByNameDescending();
                 }
-
-                
             }
             else if (arg1.Equals("PRICE"))
             {

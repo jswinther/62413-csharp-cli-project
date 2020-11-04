@@ -13,59 +13,12 @@ namespace DiscountsConsole
 {
     class Program
     {
+        private static bool isAdmin = false;
+
         static void Main()
         {
             
-           
-            string loginOptions = $"Welcome, please select login method by typing either:" +
-             $"\n\t-User " +
-             $"\n\t-Admin " +
-             $"\n\t Press Ctrl+C to exit";
-            while (true)
-            {
-                Console.WriteLine(loginOptions);
-                var input = Console.ReadLine().ToUpper();
-                switch (input)
-                {
-                    case "-USER":
-                        userLayer();
-                        break;
-                    case "-ADMIN":
-                        Console.WriteLine("Please Write your password");
-                        input = Console.ReadLine().ToUpper();
-                        if(input == "1234")
-                        {
-                            adminLayer();
-                        }
-                        break;
-                    default:
-                        Console.WriteLine($"Invalid args {input}");
-                        break;
-                }
-            }
-        }
-
-        private static void adminLayer()
-        {
-            Console.WriteLine("Yo wutup it's ya boy admingold");
-        }
-
-        private static void userLayer ()
-        {
-            bool userLoggedIn = true;
-
-
-            string options = $"Options:" +
-                $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
-                $"\n\t\t[-PriceRange [MinPrice, MaxPrice]]\n\t\t[-PriceGreaterThan [double]]" +
-                $"\n\t\t[-PriceLesserThan [double]]" +
-                $"\n\t-Brands\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
-                $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
-                $"\n\t-Admin\n\t\t[-Add Product [params]]" +
-                $"\n\t-Help" +
-                $"\n\t-Logout" +
-                $"\n\t Press Ctrl+C to exit";
-            Console.WriteLine(options);
+   
 
             //IDatabase db = new InMemoryDatabase();
             IDatabase db = new DiscountsMongoDB();
@@ -73,8 +26,18 @@ namespace DiscountsConsole
             BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.GetBrands()));
             BusinessLogicProducts<Seller> sellersBll = new BusinessLogicProducts<Seller>(new SellerDAL(db.GetSellers()));
 
-            while(userLoggedIn)
+            while (true)
             {
+                string options = $"Options:" +
+                    $"\n\t-Products\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Price|Name] [Asc|Desc]]" +
+                    $"\n\t\t[-PriceRange [MinPrice, MaxPrice]]\n\t\t[-PriceGreaterThan [double]]" +
+                    $"\n\t\t[-PriceLesserThan [double]]" +
+                    $"\n\t-Brands\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
+                    $"\n\t-Sellers\n\t\t[-NameSearch \"\\w+\"]\n\t\t[-Sort [Name] [Asc|Desc]]" +
+                    $"{(isAdmin ? "\n\t-Add [Name Price Brand Seller]\n\t-Logout" : "\n\t-Login")}" +
+                    $"\n\t-Help" +
+                    $"\n\t Press Ctrl+C to exit";
+                Console.WriteLine(options);
                 var input = Console.ReadLine().Split(' ');
                 Array.Reverse(input);
                 Stack<string> args = new Stack<string>(input);
@@ -91,17 +54,33 @@ namespace DiscountsConsole
                         sellersBll.Run(args);
                         break;
                     case "-HELP":
-                        Console.WriteLine(options);
+                        Console.WriteLine("");
+                        break;
+                    case "-LOGIN":
+                        Console.WriteLine("Please Write your password psst it is 1234");
+                        var read = Console.ReadLine().ToUpper();
+                        if (read == "1234") isAdmin = true;
                         break;
                     case "-LOGOUT":
-                        userLoggedIn = false;
+                        if (isAdmin) isAdmin = false; else goto default;
+                        break;
+                    case "-ADD":
+                        if (isAdmin) productsBll.Add(args); else goto default;
                         break;
                     default:
                         Console.WriteLine($"Invalid args {arg}");
                         break;
                 }
+
             }
         }
+
+        private static void adminLayer()
+        {
+            isAdmin = true;
+        }
+
+       
             
     }
 }
