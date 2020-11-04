@@ -1,4 +1,6 @@
 ﻿using DiscountsConsole.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,5 +74,11 @@ namespace DiscountsConsole.BusinessLogicLayer
         {
             return -x.Price.CompareTo(y.Price);
         }
+
+        public static List<T> AsList<T>(this IMongoCollection<T> collection)
+        {
+            return collection.Find(new BsonDocument()).ToList();
+        }
+
     }
 }

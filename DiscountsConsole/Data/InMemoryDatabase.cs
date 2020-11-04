@@ -115,8 +115,38 @@ namespace DiscountsConsole.Data
             }
         }
 
-        public List<Product> Products { get; } = new List<Product>();
-        public List<Brand> Brands { get; } = new List<Brand>();
-        public List<Seller> Sellers { get; } = new List<Seller>();
+        private List<Product> Products { get; } = new List<Product>();
+        private List<Brand> Brands { get; } = new List<Brand>();
+        private List<Seller> Sellers { get; } = new List<Seller>();
+
+        public void Add(Product t)
+        {
+            Products.Add(t);
+        }
+
+        public void Add(Seller t)
+        {
+            Sellers.Add(t);
+        }
+
+        public void Add(Brand t)
+        {
+            Brands.Add(t);
+        }
+
+        public List<Product> Get()
+        {
+            return Products.ToList();
+        }
+
+        List<Seller> IDatabaseCollection<Seller>.Get()
+        {
+            return Sellers.ToList();
+        }
+
+        List<Brand> IDatabaseCollection<Brand>.Get()
+        {
+            return Brands.ToList();
+        }
     }
 }
