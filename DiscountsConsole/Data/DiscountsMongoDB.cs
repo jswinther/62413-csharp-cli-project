@@ -38,7 +38,20 @@ namespace DiscountsConsole.Data
             Products.InsertOne(t);
             if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
             {
-                Sellers.FindOneAndUpdate(e => e.Name == t.Seller, Builders<Seller>.Update.Set(e => e.Products.Add(t)));
+                //Sellers.FindOneAndUpdate(e => e.Name == t.Seller, Builders<Seller>.Update.Set(e => e.Products.Add(t)));
+            }
+            else
+            {
+                Add(new Seller { Name = t.Seller, Products = new List<Product> { t } });
+            }
+
+            if (Brands.AsList().Select(s => s.Name).Contains(t.Brand))
+            {
+                //Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products.Add(t)));
+            }
+            else
+            {
+                Add(new Brand { Name = t.Brand, Products = new List<Product> { t } });
             }
         }
 
