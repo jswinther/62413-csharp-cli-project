@@ -35,6 +35,10 @@ namespace DiscountsConsole.Data
 
         public void Add(Product t)
         {
+            if (Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
+            {
+                throw new Exception("Duplicate product");
+            }
             Products.InsertOne(t);
             if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
             {
