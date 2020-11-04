@@ -18,10 +18,6 @@ namespace DiscountsConsole
             //IDatabase db = new InMemoryDatabase();
             var db = new DiscountsMongoDB();
             
-            foreach (var item in db.GetCollection<Product>("Products"))
-            {
-                Console.WriteLine(item.Name + item.Price + item.Seller);
-            }
 
             ProductsBusinessLogic productsBll = new ProductsBusinessLogic(new ProductsDAL(db.Products));
             BusinessLogicProducts<Brand> brandsBll = new BusinessLogicProducts<Brand>(new BrandsDAL(db.Brands));
