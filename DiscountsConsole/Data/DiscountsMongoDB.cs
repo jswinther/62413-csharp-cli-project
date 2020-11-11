@@ -35,21 +35,23 @@ namespace DiscountsConsole.Data
 
         public void Add(Product t)
         {
-            List<Product> products = new List<Product>();
-
-//            var a = products.Where(product => product.Brand == "Mælk").ToList();
-//            var b = products.Select(product => product.Brand).Distinct();
-
-
-            if (Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
+            if (!Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
+            {
+                Products.InsertOne(t);
+            }
+            else
             {
                 Console.WriteLine("Product already exists");
-                //throw new Exception("Duplicate product");
+                return;
             }
-            Products.InsertOne(t);
+            
             if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
             {
-                //Sellers.FindOneAndUpdate(e => e.Name == t.Seller, Builders<Seller>.Update.Set(e => e.Products.Add(t)));
+                FilterDefinition<Seller> filter = Builders<Seller>
+                    .Filter.Eq(e => e.Name, t.Seller);
+                UpdateDefinition<Seller> update = Builders<Seller>.Update
+                    .Push(e => e.Products, t);
+                Sellers.FindOneAndUpdate(filter, update);
             }
             else
             {
@@ -58,8 +60,12 @@ namespace DiscountsConsole.Data
 
             if (Brands.AsList().Select(s => s.Name).Contains(t.Brand))
             {
-                
-                //Brands.FindOneAndUpdate(e => e.Name == t.Brand, Builders<Brand>.Update.Set(e => e.Products, Products.AsList().Where(e => e.Brand == t.Brand).ToList()));
+
+                FilterDefinition<Brand> filter = Builders<Brand>
+                    .Filter.Eq(e => e.Name, t.Brand);
+                UpdateDefinition<Brand> update = Builders<Brand>.Update
+                    .Push(e => e.Products, t);
+                Brands.FindOneAndUpdate(filter, update);
             }
             else
             {
@@ -77,10 +83,39 @@ namespace DiscountsConsole.Data
             Brands.InsertOne(t);
         }
 
+        
+
 
         public void Delete(Product t)
         {
+            if (!Products.AsList().Any(s => s.Brand == t.Brand && s.Name == t.Name && s.Price == t.Price && s.Seller == t.Seller))
+            {
+                Console.WriteLine("Product doesn't exists");
+                return;
+            }
+          
+            if (Sellers.AsList().Select(s => s.Name).Contains(t.Seller))
+            {
+                FilterDefinition<Seller> filter = Builders<Seller>
+                    .Filter.Eq(e => e.Name, t.Seller);
+                UpdateDefinition<Seller> update = Builders<Seller>.Update.PullFilter(s => s.Products, f => f.Brand == t.Brand && f.Seller == t.Seller && f.Price == t.Price && f.Name == t.Name);
+                var result = Sellers.FindOneAndUpdate(filter, update);
+            }
+
+            if (Brands.AsList().Select(s => s.Name).Contains(t.Brand))
+            {
+
+                FilterDefinition<Brand> filter = Builders<Brand>
+                    .Filter.Eq(e => e.Name, t.Brand);
+                UpdateDefinition<Brand> update = Builders<Brand>.Update.PullFilter(s => s.Products, f => f.Brand == t.Brand && f.Seller == t.Seller && f.Price == t.Price && f.Name == t.Name);
+                var result = Brands.FindOneAndUpdate(filter, update);
+            }
+
             Products.FindOneAndDelete(p => p.Name == t.Name && p.Price == t.Price && p.Brand == t.Brand && p.Seller == t.Seller);
+
+            
+            var brandsResult = Brands.DeleteMany(s => s.Products.Count == 0);
+            var sellersResult = Sellers.DeleteMany(s => s.Products.Count == 0);
         }
 
         // Bør vi kunne slette sellers?
