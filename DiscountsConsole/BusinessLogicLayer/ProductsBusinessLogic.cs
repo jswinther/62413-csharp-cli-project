@@ -101,7 +101,7 @@ namespace DiscountsConsole.BusinessLogicLayer
             var brand = args.Pop();
             var seller = args.Pop();
             var product = new Product(name, price, brand, seller);
-            db.Delete(product); // Sender bare produktet med. Er det smartere hvis vi sender navn, pris, brand og seller med i stedet?
+            db.Delete(product);
         }
 
         public List<Product> Sort(List<Product> entities, Stack<string> args)
