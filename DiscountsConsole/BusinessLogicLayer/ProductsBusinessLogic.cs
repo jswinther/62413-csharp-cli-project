@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ConsoleTables;
+using DiscountsConsole.Exceptions;
 
 namespace DiscountsConsole.BusinessLogicLayer
 {
@@ -105,8 +106,10 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public List<Product> Sort(List<Product> entities, Stack<string> args)
         {
-            var arg1 = args.Pop().ToUpper();
-            var arg2 = args.Pop().ToUpper();
+            if (!args.TryPop(out string arg1)) throw new InvalidParameterException($"Expected PRICE or NAME for sorting direction, but received nothing");
+            if (!args.TryPop(out string arg2)) throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received nothing");
+            arg1 = arg1.ToUpper();
+            arg2 = arg2.ToUpper();
             if (arg1.Equals("NAME"))
             {
                 if (arg2.Equals("ASC"))
@@ -117,6 +120,7 @@ namespace DiscountsConsole.BusinessLogicLayer
                 {
                     entities = entities.SortByNameDescending();
                 }
+                else throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received {arg2}");
             }
             else if (arg1.Equals("PRICE"))
             {
@@ -128,9 +132,9 @@ namespace DiscountsConsole.BusinessLogicLayer
                 {
                     entities = entities.SortByPriceDescending();
                 }
-                
+                else throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received {arg2}");
             }
-            else throw new Exception("Invalid sorting parameter");
+            else throw new InvalidParameterException($"Invalid sorting parameter expected NAME or PRICE, but received {arg1}");
             return entities;
         }
     }

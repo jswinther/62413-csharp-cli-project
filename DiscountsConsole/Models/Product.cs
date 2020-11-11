@@ -2,10 +2,12 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace DiscountsConsole.Models
 {
+    [DebuggerDisplay("Name = {Name}, Price = {Price}, Brand = {Brand}, Seller = {Seller}")]
     public class Product : IName, IPrice
     {
         public Product(string name, double price, string brand, string seller)

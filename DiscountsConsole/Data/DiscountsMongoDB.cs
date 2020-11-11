@@ -6,10 +6,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DiscountsConsole.Data
 {
+    /// <summary>
+    /// DiscountsMongoDB acts as a Data Access Layer between the database and business logic and can be used interchangably with InMemoryDatabase
+    /// </summary>
     public class DiscountsMongoDB : IDatabase
     {
         private IMongoDatabase db;
@@ -18,13 +22,6 @@ namespace DiscountsConsole.Data
         {
             var client = new MongoClient();
             db = client.GetDatabase("DiscountsDatabase");
-            /*
-            var brands = Products.Select(f => f.Brand).Distinct().Select(s => new Brand { Name = s, Products = Products.Where(e => e.Brand == s).ToList()}).Distinct();
-            var sellers = Products.Select(f => f.Seller).Distinct().Select(s => new Seller { Name = s, Products = Products.Where(e => e.Seller == s).ToList() }).Distinct();
-            db.GetCollection<Brand>("Brands").InsertMany(brands);
-            db.GetCollection<Seller>("Sellers").InsertMany(sellers);
-            Console.WriteLine();
-            */
         }
 
         private IMongoCollection<Brand> Brands => db.GetCollection<Brand>("Brands");
@@ -112,22 +109,33 @@ namespace DiscountsConsole.Data
             }
 
             Products.FindOneAndDelete(p => p.Name == t.Name && p.Price == t.Price && p.Brand == t.Brand && p.Seller == t.Seller);
-
-            
-            var brandsResult = Brands.DeleteMany(s => s.Products.Count == 0);
-            var sellersResult = Sellers.DeleteMany(s => s.Products.Count == 0);
+            RemoveEmptyBrandsAndSellers();
         }
 
-        // Bør vi kunne slette sellers?
         public void Delete(Seller t)
         {
+            UpdateDefinition<Brand> update = Builders<Brand>.Update.PullFilter(brands => brands.Products, product => product.Seller == t.Name);
+            Expression<Func<Brand, bool>> filter = brands => brands.Products.Any(product => product.Seller == t.Name);
+            var result = Brands.UpdateMany(filter, update);
+            var productsResult = Products.DeleteMany(s => s.Seller == t.Name);
             Sellers.FindOneAndDelete(s => s.Name == t.Name);
+            RemoveEmptyBrandsAndSellers();
         }
 
-        // Bør vi kunne slette brands?
         public void Delete(Brand t)
         {
+            UpdateDefinition<Seller> update = Builders<Seller>.Update.PullFilter(seller => seller.Products, product => product.Brand == t.Name);
+            Expression<Func<Seller, bool>> filter = seller => seller.Products.Any(product => product.Brand == t.Name);
+            var result = Sellers.UpdateMany(filter, update);
+            var productsResult = Products.DeleteMany(s => s.Brand == t.Name);
             Brands.FindOneAndDelete(s => s.Name == t.Name);
+            RemoveEmptyBrandsAndSellers();
+        }
+
+        private void RemoveEmptyBrandsAndSellers()
+        {
+            var brandsResult = Brands.DeleteMany(s => s.Products.Count == 0);
+            var sellersResult = Sellers.DeleteMany(s => s.Products.Count == 0);
         }
 
         public List<Brand> GetBrands()

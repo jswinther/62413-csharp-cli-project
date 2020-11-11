@@ -1,6 +1,7 @@
 ﻿using DiscountsConsole.Models;
 using MongoDB.Driver;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -121,27 +122,60 @@ namespace DiscountsConsole.Data
 
         public void Delete(Product t)
         {
-            Products.Remove(t);
+            var result = Products.Remove(t);
+            Sellers.ForEach(s => s.Products.Remove(t));
+            Brands.ForEach(s => s.Products.Remove(t));
+            DeleteBrandsAndSellersWithNoProducts();
         }
 
         public void Delete(Seller t)
         {
-            Sellers.Remove(t);
+            Products.RemoveAll(product => product.Seller == t.Name);
+            Brands.ForEach(brand => brand.Products.RemoveAll(product => product.Seller == t.Name));
+            var result = Sellers.RemoveAll(seller => seller.Name == t.Name);
+            DeleteBrandsAndSellersWithNoProducts();
         }
 
         public void Delete(Brand t)
         {
-            Brands.Remove(t);
+            Products.RemoveAll(s => s.Brand == t.Name);
+            Sellers.ForEach(seller => seller.Products.RemoveAll(product => product.Brand == t.Name));
+            var result = Brands.RemoveAll(brand => brand.Name == t.Name);
+            DeleteBrandsAndSellersWithNoProducts();
+        }
+
+        private void DeleteBrandsAndSellersWithNoProducts()
+        {
+            Sellers.RemoveAll(s => s.Products.Count == 0);
+            Brands.RemoveAll(s => s.Products.Count == 0);
         }
 
         public void Add(Product t)
         {
             Products.Add(t);
+            try
+            {
+                Sellers.FirstOrDefault(seller => seller.Name == t.Seller).Products.Add(t);
+            }
+            catch (Exception)
+            {
+                Add(new Seller { Name = t.Seller, Products = new List<Product> { t } });
+            }
+
+            try
+            {
+                Brands.FirstOrDefault(brands => brands.Name == t.Brand).Products.Add(t);
+            }
+            catch (Exception)
+            {
+                Add(new Brand { Name = t.Brand, Products = new List<Product> { t } });
+            }
         }
 
         public void Add(Seller t)
         {
             Sellers.Add(t);
+
         }
 
         public void Add(Brand t)

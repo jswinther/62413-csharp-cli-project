@@ -1,5 +1,6 @@
 ﻿using ConsoleTables;
 using DiscountsConsole.Data;
+using DiscountsConsole.Exceptions;
 using DiscountsConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -89,6 +90,11 @@ namespace DiscountsConsole.BusinessLogicLayer
             }
         }
 
+        internal void Add(Stack<string> args)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Seller> Search(List<Seller> entities, Stack<string> args)
         {
             var arg = args.Pop().ToUpper();
@@ -98,8 +104,10 @@ namespace DiscountsConsole.BusinessLogicLayer
 
         public List<Seller> Sort(List<Seller> entities, Stack<string> args)
         {
-            var arg1 = args.Pop().ToUpper();
-            var arg2 = args.Pop().ToUpper();
+            if (!args.TryPop(out string arg1)) throw new InvalidParameterException($"Expected PRICE or NAME for sorting direction, but received nothing");
+            if (!args.TryPop(out string arg2)) throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received nothing");
+            arg1 = arg1.ToUpper();
+            arg2 = arg2.ToUpper();
             if (arg1.Equals("NAME"))
             {
                 if (arg2.Equals("ASC"))
@@ -110,6 +118,7 @@ namespace DiscountsConsole.BusinessLogicLayer
                 {
                     entities = entities.SortByNameDescending();
                 }
+                else throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received {arg2}");
 
             }
             else if (arg1.Equals("PRICE"))
@@ -124,10 +133,16 @@ namespace DiscountsConsole.BusinessLogicLayer
                     {
                         entity.Products = entity.Products.SortByNameDescending();
                     }
+                    else throw new InvalidParameterException($"Expected ASC or DESC for sorting direction, but received {arg2}");
                 }
             }
-            else throw new Exception("Invalid sorting parameter");
+            else throw new InvalidParameterException($"Invalid sorting parameter {arg1}");
             return entities;
+        }
+
+        internal void Delete(Stack<string> args)
+        {
+            db.Delete(new Seller { Name = args.Pop() });
         }
     }
 }
